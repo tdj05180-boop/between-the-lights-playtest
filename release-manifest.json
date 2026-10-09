@@ -1,5 +1,5 @@
 {
-  "version": "integrated-20261010",
+  "version": "integrated-20261010-result-css-fix",
   "files": [
     {
       "path": ".nojekyll",
@@ -282,6 +282,11 @@
       "sha256": "da20ac3a1c8a67142cb40fb6ba9f118542b3ee9d470bada07bd057ccd57916ee"
     },
     {
+      "path": "src/systems/part-results.css",
+      "bytes": 2171,
+      "sha256": "f9a9b6ddafaecdd50e1430868c02f6301c947ff612cd206d28e0b5256c8526bd"
+    },
+    {
       "path": "src/systems/part-results.js",
       "bytes": 3459,
       "sha256": "95a2edac8296bb7a4ff7b857bb0599194b96d8e6233ff1c6e121746a4dd83dc3"
@@ -427,6 +432,16 @@
       "sha256": "e2cdd9991ed7c8310d2a820c15e18244e8721bff136cc99b9be8c3103afa5320"
     },
     {
+      "path": "warehouse-study/audio/licenses/kenney-impact.txt",
+      "bytes": 608,
+      "sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db"
+    },
+    {
+      "path": "warehouse-study/audio/licenses/kenney-interface.txt",
+      "bytes": 574,
+      "sha256": "f7966c773bbed0eca6a9c75081c44a178b38eae112724dbb5fdfbd4192d118a9"
+    },
+    {
       "path": "warehouse-study/audio/pickup.mp3",
       "bytes": 6940,
       "sha256": "9c9249778d91be7945d3bd7b5bb549d903fbd67de9de23b1c391dc9c480b8b30"
@@ -510,16 +525,6 @@
       "path": "warehouse-study/workflow-layout.js",
       "bytes": 696,
       "sha256": "f12f842f18b19d21d3a2629d76dbc70ab11a8487d6a21d2f308b3508942521f7"
-    },
-    {
-      "path": "warehouse-study/audio/licenses/kenney-impact.txt",
-      "bytes": 608,
-      "sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db"
-    },
-    {
-      "path": "warehouse-study/audio/licenses/kenney-interface.txt",
-      "bytes": 574,
-      "sha256": "f7966c773bbed0eca6a9c75081c44a178b38eae112724dbb5fdfbd4192d118a9"
     }
   ]
 }
