@@ -510,6 +510,16 @@
       "path": "warehouse-study/workflow-layout.js",
       "bytes": 696,
       "sha256": "f12f842f18b19d21d3a2629d76dbc70ab11a8487d6a21d2f308b3508942521f7"
+    },
+    {
+      "path": "warehouse-study/audio/licenses/kenney-impact.txt",
+      "bytes": 608,
+      "sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db"
+    },
+    {
+      "path": "warehouse-study/audio/licenses/kenney-interface.txt",
+      "bytes": 574,
+      "sha256": "f7966c773bbed0eca6a9c75081c44a178b38eae112724dbb5fdfbd4192d118a9"
     }
   ]
 }
