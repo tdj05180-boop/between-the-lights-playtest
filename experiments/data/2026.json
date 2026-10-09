@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "id": "2026",
+  "title": "2026 · 함께 움직이는 하루",
+  "sceneId": "life-agency",
+  "appearanceId": "era-agency",
+  "spawn": {
+    "x": 0,
+    "z": 4.4
+  },
+  "interactions": [
+    {
+      "id": "computer",
+      "x": 0,
+      "z": -1.5,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "업무 컴퓨터",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "dispatch",
+      "type": "minigame",
+      "title": "열 건의 주문 배차",
+      "description": "빛나는 표시 가까이에서 행동으로 시작하세요.",
+      "targets": [
+        "computer"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-dispatch",
+      "config": {
+        "count": 10,
+        "intervalMs": 4500,
+        "travelMs": 6500,
+        "riders": [
+          {
+            "x": 14,
+            "y": 18
+          },
+          {
+            "x": 83,
+            "y": 17
+          },
+          {
+            "x": 15,
+            "y": 82
+          },
+          {
+            "x": 83,
+            "y": 82
+          }
+        ],
+        "orders": [
+          {
+            "x": 33,
+            "y": 29
+          },
+          {
+            "x": 66,
+            "y": 70
+          },
+          {
+            "x": 67,
+            "y": 30
+          },
+          {
+            "x": 34,
+            "y": 69
+          },
+          {
+            "x": 43,
+            "y": 40
+          },
+          {
+            "x": 60,
+            "y": 60
+          },
+          {
+            "x": 29,
+            "y": 56
+          },
+          {
+            "x": 70,
+            "y": 43
+          },
+          {
+            "x": 38,
+            "y": 33
+          },
+          {
+            "x": 67,
+            "y": 67
+          }
+        ]
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "dispatch",
+      "after": "dispatch-done"
+    },
+    {
+      "id": "management",
+      "type": "minigame",
+      "title": "네 권역의 균형",
+      "description": "빛나는 표시 가까이에서 행동으로 시작하세요.",
+      "targets": [
+        "computer"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-management",
+      "config": {
+        "riders": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "loads": [
+          70,
+          40,
+          70,
+          40
+        ],
+        "patterns": [
+          [
+            5,
+            1,
+            4,
+            1
+          ],
+          [
+            2,
+            4,
+            2,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            2
+          ]
+        ],
+        "changeMs": 12000,
+        "rate": 5,
+        "safeLimit": 75,
+        "safeMs": 20000,
+        "limitMs": 90000
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "management",
+      "after": "done"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "2026 · 확인된 이야기",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "2026년에는 600명 이상의 라이더를 관리하는 대리점으로 이어졌습니다.",
+          "durationMs": 5000
+        },
+        {
+          "text": "배차와 권역 관리는 규모의 변화를 표현한 임시 게임입니다. 실제 운영 수치와 규칙이 아닙니다.",
+          "durationMs": 5000
+        }
+      ]
+    },
+    "dispatch-done": {
+      "speaker": "다음 업무",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "이제 네 권역의 부담을 살펴보고 인력을 재배치해 보세요.",
+          "durationMs": 4000
+        }
+      ]
+    },
+    "done": {
+      "speaker": "여기까지 이어 온 길",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "어려웠던 시간부터 함께 움직이는 하루까지.",
+          "durationMs": 5000
+        },
+        {
+          "text": "이 실험작은 인터뷰가 확정되기 전의 임시 구성입니다.",
+          "durationMs": 5000
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}

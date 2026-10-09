@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "2019",
+  "title": "2019 · 다음 길로",
+  "sceneId": "life-office",
+  "appearanceId": "era-office",
+  "spawn": {
+    "x": 0,
+    "z": 4.4
+  },
+  "interactions": [
+    {
+      "id": "documents",
+      "x": 0,
+      "z": 3.4,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "서류 정리 시작",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "documents",
+      "type": "minigame",
+      "title": "서류 다섯 장",
+      "description": "빛나는 표시 가까이에서 행동으로 시작하세요.",
+      "targets": [
+        "documents"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-documents",
+      "config": {
+        "hitCooldownMs": 1600,
+        "slowMs": 1800,
+        "slowScale": 0.55
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "office",
+      "after": "done"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "2019 · 확인된 이야기",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "온라인 사업을 하던 중 세무조사를 받았습니다. 이후 서울로 이동했습니다.",
+          "durationMs": 5000
+        },
+        {
+          "text": "서류와 붉은 구역은 임시 표현입니다. 실제 조사 과정이나 법적 판단을 재현하지 않습니다.",
+          "durationMs": 5000
+        }
+      ]
+    },
+    "done": {
+      "speaker": "전환",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "필요한 서류를 챙겼습니다. 서울로 향하는 길에 오릅니다.",
+          "durationMs": 4500
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}

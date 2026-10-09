@@ -1,0 +1,7 @@
+{
+ "shutter":{"label":"셔터 버티기","maxScore":1000,"maxMs":15000},
+ "sorting":{"label":"택배 분류","maxScore":1000,"count":10,"accuracyWeight":0.65,"fastMs":50000,"slowMs":150000},
+ "office":{"label":"서류 수집","maxScore":1000,"avoidanceWeight":0.55,"hitLimit":8,"fastMs":30000,"slowMs":100000},
+ "dispatch":{"label":"라이더 배차","maxScore":1000,"efficiencyWeight":0.7,"fastMs":45000,"slowMs":110000},
+ "management":{"label":"구역 관리","maxScore":1000,"safeMs":20000,"riskPenalty":0.08,"delayPenalty":0.003}
+}

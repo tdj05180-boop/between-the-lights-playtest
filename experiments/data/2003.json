@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "2003",
+  "title": "2003 · 버텨 낸 시간",
+  "sceneId": "life-street",
+  "appearanceId": "default",
+  "spawn": {
+    "x": -1.4,
+    "z": 2
+  },
+  "interactions": [
+    {
+      "id": "shopkeeper",
+      "x": -2.05,
+      "z": 0.9,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "가게 앞 사람",
+      "kind": "npc"
+    },
+    {
+      "id": "shutter",
+      "x": 0,
+      "z": -0.1,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "셔터 앞에서",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "greeting",
+      "type": "interact",
+      "title": "가게 앞에서 이야기 듣기",
+      "description": "표시에 다가가 행동하세요.",
+      "targets": [
+        "shopkeeper"
+      ],
+      "goal": {
+        "event": "interact",
+        "count": 1
+      },
+      "before": "greeting"
+    },
+    {
+      "id": "shutter",
+      "type": "minigame",
+      "title": "버텨 낸 시간",
+      "description": "빛나는 표시 가까이에서 행동으로 시작하세요.",
+      "targets": [
+        "shutter"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-shutter",
+      "config": {
+        "tapGain": 0.09,
+        "baseFall": 0.12,
+        "rampFall": 0.52,
+        "maxMs": 15000,
+        "graceMs": 1500,
+        "fallPower": 1.5
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "shutter",
+      "after": "closed"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "2003 · 확인된 이야기",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "2003년 결혼 후, 사업이 잘되지 않아 힘든 시기를 보냈습니다.",
+          "durationMs": 3100
+        },
+        {
+          "text": "이 거리와 셔터는 그 시기를 표현한 임시 무대입니다.",
+          "durationMs": 2600
+        }
+      ]
+    },
+    "greeting": {
+      "speaker": "임시 대사 · 가게 앞 사람",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "“여기서 얼마나 버틸 수 있을까요.”",
+          "durationMs": 2000
+        },
+        {
+          "text": "버튼을 누르면 셔터가 올라갑니다. 닫히더라도 이야기는 계속됩니다.",
+          "durationMs": 3100
+        }
+      ]
+    },
+    "closed": {
+      "speaker": "다음 시간으로",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "셔터가 내려왔습니다. 버텨 낸 시간이 남습니다.",
+          "durationMs": 2400
+        },
+        {
+          "text": "이후 유통업을 하며 형편이 나아졌습니다.",
+          "durationMs": 2200
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}

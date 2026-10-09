@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "seoul",
+  "title": "서울 · 새로운 문",
+  "sceneId": "life-city",
+  "appearanceId": "era-office",
+  "spawn": {
+    "x": -6,
+    "z": 6.5
+  },
+  "interactions": [
+    {
+      "id": "light0",
+      "x": -5,
+      "z": -1,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "첫 번째 빛",
+      "kind": "object"
+    },
+    {
+      "id": "light1",
+      "x": 0,
+      "z": -2,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "두 번째 빛",
+      "kind": "object"
+    },
+    {
+      "id": "light2",
+      "x": 5,
+      "z": -1,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "세 번째 빛",
+      "kind": "object"
+    },
+    {
+      "id": "door",
+      "x": 0,
+      "z": -4.4,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "새로운 문",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "city-lights",
+      "type": "interact",
+      "title": "거리의 빛 모으기 {count}/3",
+      "description": "표시에 다가가 행동하세요.",
+      "targets": [
+        "light0",
+        "light1",
+        "light2"
+      ],
+      "goal": {
+        "event": "interact",
+        "count": 3
+      }
+    },
+    {
+      "id": "door",
+      "type": "minigame",
+      "title": "새로운 문을 두드리기",
+      "description": "빛나는 표시 가까이에서 행동으로 시작하세요.",
+      "targets": [
+        "door"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-door",
+      "config": {
+        "count": 3
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "after": "done"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "서울 · 상징적 거리",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "차를 살피며 길을 건너고 세 개의 빛을 모아 보세요.",
+          "durationMs": 4500
+        },
+        {
+          "text": "차와 부딪히면 안전한 보도로 돌아옵니다. 이 장면은 실제 사건을 의미하지 않습니다.",
+          "durationMs": 4500
+        }
+      ]
+    },
+    "done": {
+      "speaker": "이어지는 시간",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "세 번 두드린 문 너머, 이야기는 2026년으로 이어집니다.",
+          "durationMs": 5000
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}
