@@ -1,5 +1,5 @@
 {
-  "version": "integrated-20261010-result-css-fix",
+  "version": "integrated-20261010-street-traffic",
   "files": [
     {
       "path": ".nojekyll",
@@ -108,8 +108,8 @@
     },
     {
       "path": "experiments/spaces/street.js",
-      "bytes": 17411,
-      "sha256": "e889129194a9ee4ecfbe2c46f435e1461d4aa99a11711b4ac5c249cc8732c88d"
+      "bytes": 17760,
+      "sha256": "386468370eb4888d450e2207ded986d3acf89a3e8c03c2de7be42375856eafd2"
     },
     {
       "path": "experiments/spaces/train.js",
@@ -333,8 +333,8 @@
     },
     {
       "path": "street-study/architecture.js",
-      "bytes": 8648,
-      "sha256": "be52d0297835dbc8ae249bf0148bd668580d28ffec3bde27aae9ec3d35421f90"
+      "bytes": 9777,
+      "sha256": "61cc6237f3f77c50df62265288d14b6f09c6234eed132192794554b67cab64ea"
     },
     {
       "path": "street-study/audio-routing.js",
@@ -405,6 +405,16 @@
       "path": "street-study/street.css",
       "bytes": 514,
       "sha256": "ad9e50c938bb5c6a0b96ab322a0d2f029866e9880967383d78f2cdf74631d649"
+    },
+    {
+      "path": "street-study/traffic-models.js",
+      "bytes": 12667,
+      "sha256": "5cf7f95e8634dfed87947a4724c7e1080cb668afd031309d2b4d5ea4d0265e34"
+    },
+    {
+      "path": "street-study/traffic-state.js",
+      "bytes": 4669,
+      "sha256": "e16365350122ba30af24a50dddd43ca3ad6218fef4be94c4ca7513cac9de8bf4"
     },
     {
       "path": "warehouse-study/architecture.js",
