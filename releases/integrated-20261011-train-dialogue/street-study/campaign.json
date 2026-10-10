@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "mode": "presentation",
+  "chapters": [
+    "../experiments/data/2003.json",
+    "../warehouse-study/chapter.json",
+    "../experiments/data/2019.json",
+    "../experiments/data/train.json",
+    "../experiments/data/seoul.json",
+    "../experiments/data/2026.json"
+  ]
+}
