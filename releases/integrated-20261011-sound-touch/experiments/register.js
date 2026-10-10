@@ -1,4 +1,4 @@
-import {seoulLights} from './minigames/seoul.js';
+import {seoulLights} from './minigames/seoul.js?v=door-ready-20261011';
 import {spaces,minigames,appearances} from '../src/content/registry.js';
 import {streetSpace} from './spaces/street.js';
 import {warehouse} from './spaces/warehouse.js';
@@ -8,7 +8,7 @@ import {city} from './spaces/city.js';
 import {lifeShutter} from './minigames/shutter.js';
 import {sorting} from './minigames/sorting.js';
 import {documents} from './minigames/office.js';
-import {door} from './minigames/door.js';
+import {door} from './minigames/door.js?v=door-ready-20261011';
 import {dispatch} from './minigames/dispatch.js';
 import {management} from './minigames/management.js';
 import {eraAppearance} from './appearances.js';
