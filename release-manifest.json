@@ -1,5 +1,5 @@
 {
-  "version": "integrated-20261010-street-traffic",
+  "version": "integrated-20261010-crosswalks",
   "files": [
     {
       "path": ".nojekyll",
@@ -108,8 +108,8 @@
     },
     {
       "path": "experiments/spaces/street.js",
-      "bytes": 17760,
-      "sha256": "386468370eb4888d450e2207ded986d3acf89a3e8c03c2de7be42375856eafd2"
+      "bytes": 18281,
+      "sha256": "0b697f13503d208319aa7d90656f6f27406d53c3d4c08d2681d112d91636268d"
     },
     {
       "path": "experiments/spaces/train.js",
@@ -333,8 +333,8 @@
     },
     {
       "path": "street-study/architecture.js",
-      "bytes": 9777,
-      "sha256": "61cc6237f3f77c50df62265288d14b6f09c6234eed132192794554b67cab64ea"
+      "bytes": 10124,
+      "sha256": "10e78aec139b19a71ce48913dee18622af179b83b35949e589d7a84bc3bd2de7"
     },
     {
       "path": "street-study/audio-routing.js",
@@ -408,13 +408,13 @@
     },
     {
       "path": "street-study/traffic-models.js",
-      "bytes": 12666,
-      "sha256": "eafdd03d17052dfb2507fdf6d77ef4fe6403fc27b00cd16d7d5aa83837bca3ab"
+      "bytes": 15924,
+      "sha256": "01611e7f01eae25d42788935eb388273239897da717a93f399144de96bd046da"
     },
     {
       "path": "street-study/traffic-state.js",
-      "bytes": 4669,
-      "sha256": "e16365350122ba30af24a50dddd43ca3ad6218fef4be94c4ca7513cac9de8bf4"
+      "bytes": 7255,
+      "sha256": "5efbc4dc690d50aa3c57d98838474743b777361256f6d7f4754ab7507a4b57d6"
     },
     {
       "path": "warehouse-study/architecture.js",
