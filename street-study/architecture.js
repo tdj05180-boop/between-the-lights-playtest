@@ -86,9 +86,13 @@ export function addNeighbourhood(world,scene){
  // Continuations: two cross streets and recessed blocks. Far buildings retain roofs/windows.
  for(const x of [-30,30]){
   box(world,5.8,.12,300,0x9ca6a5,x,-.07,0).castShadow=false;
-  for(const s of [-1,1])for(const [a,b]of [[-150,3.8],[8.3,150]]){
-   box(world,1.7,.16,b-a,0xcacabb,x+s*3.8,.025,(a+b)/2).castShadow=false;
-   box(world,.18,.14,b-a,trim,x+s*2.99,.045,(a+b)/2).castShadow=false;
+  const edges=[-150,-.15,2.65,3.8,8.3,9.45,12.25,150];
+  for(const side of [-1,1])for(let i=1;i<edges.length;i++){
+   const a=edges[i-1],b=edges[i],z=(a+b)/2;if(z>3.8&&z<8.3)continue;
+   const ramp=Math.abs(z-1.25)<1.4||Math.abs(z-10.85)<1.4;
+   box(world,ramp?.97:1.7,.16,b-a,0xcacabb,x+side*(ramp?4.17:3.8),.025,z).castShadow=false;
+   if(!ramp)box(world,.18,.14,b-a,trim,x+side*2.99,.045,z).castShadow=false;
+   else{const r=box(world,.83,.035,b-a,0xcacabb,x+side*3.3,.035,z);r.rotation.z=side*.145;r.castShadow=false;}
   }
  }
  const muted=[0xc4c6b7,0xc4b5a8,0xb3c2bb,0xd2c3a8,0xb9bec8,0xc9b3aa];
@@ -132,5 +136,5 @@ export function addNeighbourhood(world,scene){
  const skyCanvas=document.createElement('canvas');skyCanvas.width=16;skyCanvas.height=256;const skyCtx=skyCanvas.getContext('2d'),gradient=skyCtx.createLinearGradient(0,0,0,256);gradient.addColorStop(0,'#88b5c8');gradient.addColorStop(.52,'#c9dedb');gradient.addColorStop(.7,'#e5e9e0');gradient.addColorStop(1,'#e5e9e0');skyCtx.fillStyle=gradient;skyCtx.fillRect(0,0,16,256);
  const skyTexture=new T.CanvasTexture(skyCanvas);skyTexture.colorSpace=T.SRGBColorSpace;
  const sky=new T.Mesh(new T.SphereGeometry(180,24,14),new T.MeshBasicMaterial({map:skyTexture,side:T.BackSide,depthWrite:false,fog:false}));sky.renderOrder=-1;scene.add(sky);
- return {buildingCount:buildingCount+40,additionalObstacles:[...[-23,-12,12,23].flatMap(x=>[3.25,9.15].map(z=>({x,z,w:.28,d:.28,h:6.2})))]};
+ return {buildingCount:buildingCount+40,additionalObstacles:[...utilityXs.flatMap(x=>[3.25,9.15].map(z=>({x,z,w:.28,d:.28,h:6.2})))]};
 }
