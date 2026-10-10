@@ -16,6 +16,7 @@ export class MinigameHost {
     const live=()=>this.current===s&&!this.clock.paused;
     const context={
       elapsedMs:()=>Math.max(0,this.clock.elapsed()-s.start),
+      lockInput:(policy)=>{const unlock=this.locks.acquire(policy);let released=false;const release=()=>{if(released)return;released=true;unlock();this.onInputChange(policy);};scope.own(release);this.onInputChange(policy);return release;},
       input:()=>live()?this.input():{},
       world:()=>this.world(), // Borrowed scene/player; content owns only what it adds.
       finish:result=>{if(live())this.finish(result,s);},
