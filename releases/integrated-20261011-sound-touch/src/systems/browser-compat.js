@@ -1,3 +1,4 @@
+import {isStandalone} from './webapp-mode.js';
 // Browser compatibility only; no game progression or timer state lives here.
 export function capturePointer(element,id){try{element.setPointerCapture(id);return true;}catch{return false;}}
 export function releasePointer(element,id){try{if(id!==null&&element.hasPointerCapture(id))element.releasePointerCapture(id);}catch{}}
@@ -41,6 +42,7 @@ export function bindTouchAction(button,action,{onPress=false}={}){
 }
 
 export function fullscreenAPI(doc){
+ if(isStandalone(doc.defaultView))return null;
  const root=doc.documentElement;
  if(doc.fullscreenEnabled===true&&typeof root.requestFullscreen==='function'&&typeof doc.exitFullscreen==='function')return {active:()=>!!doc.fullscreenElement,enter:()=>root.requestFullscreen(),exit:()=>doc.exitFullscreen()};
  if(doc.webkitFullscreenEnabled===true&&typeof root.webkitRequestFullscreen==='function'&&typeof doc.webkitExitFullscreen==='function')return {active:()=>!!doc.webkitFullscreenElement,enter:()=>root.webkitRequestFullscreen(),exit:()=>doc.webkitExitFullscreen()};
