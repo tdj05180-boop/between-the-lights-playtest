@@ -2,7 +2,7 @@ import {createOfficeAudio} from '../office-study/audio.js';
 import {createWarehouseAudio} from '../warehouse-study/audio.js';
 import {createAudio} from '../src/audio.js';
 import {createStreetAudio} from './audio.js';
-import {createSeoulAudio} from '../seoul-study/audio.js';
+import {createSeoulAudio} from '../seoul-study/audio.js?v=seoul-audio-start-20261011';
 export function createChapterAudio(isPaused,isStarted,getView){
  let current=null,ended=false,handoff=false,handoffEnd=0,muted=false,unlocked=false;
  const playing=()=>isStarted()&&!handoff;

@@ -6,7 +6,7 @@ import {createWarehouseStudy} from '../warehouse-study/space.js';
 import {warehouseSorting} from '../warehouse-study/sorting.js';
 import {workflow} from '../warehouse-study/workflow-layout.js';
 import {GameplayCamera} from '../src/systems/gameplay-camera.js';
-import {createChapterAudio} from './audio-routing.js';
+import {createChapterAudio} from './audio-routing.js?v=seoul-audio-start-20261011';
 
 // Import the latest warehouse directly, never substitute the old life-warehouse adapter.
 spaces.register('warehouse-workflow',{
