@@ -1,6 +1,6 @@
 import '../experiments/register.js';
 import {spaces,minigames} from '../src/content/registry.js';
-import {startGame} from '../src/runtime.js';
+import {startGame} from '../src/runtime.js?v=webapp-20261011';
 import {createSession} from '../experiments/scoring.js';
 import {createWarehouseStudy} from '../warehouse-study/space.js';
 import {warehouseSorting} from '../warehouse-study/sorting.js';
