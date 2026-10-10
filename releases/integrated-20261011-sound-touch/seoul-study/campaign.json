@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "mode": "distribution",
+  "chapters": [
+    "../experiments/data/seoul.json",
+    "../experiments/data/2026.json"
+  ]
+}

@@ -1,0 +1,12 @@
+import '../experiments/register.js';
+import {startGame} from '../src/runtime.js';
+import {createSession} from '../experiments/scoring.js';
+import {GameplayCamera} from '../src/systems/gameplay-camera.js';
+import {createChapterAudio} from '../street-study/audio-routing.js';
+import {spaces} from '../src/content/registry.js';
+const original=spaces.get('life-city'),create=original.create;
+original.create=ctx=>{const v=create(ctx);window.seoulView=v;return v;};
+const set=(s,t)=>document.querySelector(s).textContent=t;
+document.title='서울 거리 · 로컬 검증';set('#welcome .year','SEOUL');set('#welcome .lead','차를 피해 다시 시작할 빛 세 개를 모으세요.');set('#welcome .playtime','서울 거리 로컬 테스트');set('#welcome .intro-note','실제 교통 행동을 안내하지 않는 상징적 미니게임입니다.');
+const scores=await fetch(new URL('../experiments/data/scores.json',import.meta.url)).then(r=>r.json());
+await startGame({campaignUrl:new URL('./campaign.json',import.meta.url),session:createSession(scores,{full:false,storageKey:'seoul-local-test'}),cameraRig:new GameplayCamera(),audioFactory:createChapterAudio});
