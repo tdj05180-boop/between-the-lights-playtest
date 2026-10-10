@@ -2,7 +2,7 @@ import '../experiments/register.js';
 import {startGame} from '../src/runtime.js';
 import {createSession} from '../experiments/scoring.js';
 import {GameplayCamera} from '../src/systems/gameplay-camera.js';
-import {createChapterAudio} from '../street-study/audio-routing.js';
+import {createChapterAudio} from '../street-study/audio-routing.js?v=seoul-audio-start-20261011';
 import {spaces} from '../src/content/registry.js';
 const original=spaces.get('life-city'),create=original.create;
 original.create=ctx=>{const v=create(ctx);window.seoulView=v;return v;};

@@ -1,5 +1,6 @@
 import {load,run,check,until,wait,collect,knock,result,walk,w,d,s,v,action,pointer} from './tests.js';
 const a=()=>w().seoulAudioStatus();
+setInterval(()=>{const n=document.getElementById('audioDiagnostic');if(n&&w().seoulAudioStatus)n.textContent=JSON.stringify(a(),null,2);},500);
 document.querySelector('#soundCheck').onclick=()=>run(async()=>{
  await load(true);await until(()=>a().loaded.length===7&&!a().bgmPaused&&!a().ambiencePaused,25000);
  const music=w().testMedia.find(m=>m.src.includes('night-city')),ambient=w().testMedia.find(m=>m.src.includes('traffic-background'));check(!!music&&!!ambient,'실제 제공 음원 연결');
