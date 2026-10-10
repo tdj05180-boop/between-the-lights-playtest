@@ -1,5 +1,5 @@
 {
-  "version": "integrated-20261010-crosswalks",
+  "version": "integrated-20261010-rice-food",
   "files": [
     {
       "path": ".nojekyll",
@@ -467,6 +467,11 @@
       "sha256": "7012a3f1a734c1d894bddd04322110b7ae6493b554c070eea9939fe1ec71ba75"
     },
     {
+      "path": "warehouse-study/background-workers.js",
+      "bytes": 3817,
+      "sha256": "56c1ef6d048c388aa2febb08abba08ded39a6a0b6993fd7c27d7a13976ba1982"
+    },
+    {
       "path": "warehouse-study/campus.js",
       "bytes": 3844,
       "sha256": "ab900d37b83d78bfc6f5bc3b641e4f8aa893178c9626455b495dd2be73425a23"
@@ -492,6 +497,11 @@
       "sha256": "ecdd380e672f1d10745b73847bfd908c14c871271cda78023bbabd6a9afe1abb"
     },
     {
+      "path": "warehouse-study/food-cargo.js",
+      "bytes": 4583,
+      "sha256": "8412393bb93ca11a99e90463e028dd1a757314888a25beefa837d3a207f39c22"
+    },
+    {
       "path": "warehouse-study/geometry.js",
       "bytes": 3399,
       "sha256": "2fe1aa2c982c8f003bd90cacdfe68d99e64b1ca0ebdb9031596f7dbbadfa9a72"
@@ -503,8 +513,8 @@
     },
     {
       "path": "warehouse-study/inbound.js",
-      "bytes": 4632,
-      "sha256": "58f20673ece8c8a62d52b787fd3d46a821b4a656508dd8392c56cb834deea200"
+      "bytes": 4581,
+      "sha256": "9833d644fbf70cf16799de3a98dd521fb841395c7f7a60d813d4cd2cd65efa57"
     },
     {
       "path": "warehouse-study/office.js",
@@ -513,8 +523,8 @@
     },
     {
       "path": "warehouse-study/props.js",
-      "bytes": 6325,
-      "sha256": "cb4302acf108358cd1443ed7bb54eccfe8083add4fc87853b62f85ebd7800a11"
+      "bytes": 6519,
+      "sha256": "ea787d9f23355bd453ea76a4fc63ff26ceafe4a68e85d5fe58d496c7abea049f"
     },
     {
       "path": "warehouse-study/reach.js",
@@ -523,13 +533,13 @@
     },
     {
       "path": "warehouse-study/sorting.js",
-      "bytes": 5549,
-      "sha256": "0226e6545d969b76c276dfc383a460070566a7e0ed6542f292f262f9a1d7f83f"
+      "bytes": 5563,
+      "sha256": "b7c80c29d0d90866479854aa7e7c7971e894615cd4bfcb551f8a6f328f819c54"
     },
     {
       "path": "warehouse-study/space.js",
-      "bytes": 10849,
-      "sha256": "5ffc1a6e132b3e88525fc4b00f2b2cd8d64c87975be96adf6fe7c8aa6751b218"
+      "bytes": 10780,
+      "sha256": "8f80665648267b804d6767795ba9d5d31c00cce256a9deaef9e558a9287a5ea9"
     },
     {
       "path": "warehouse-study/workflow-layout.js",
