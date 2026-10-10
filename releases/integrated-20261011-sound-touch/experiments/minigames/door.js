@@ -2,7 +2,6 @@ import {panel,actionButton} from '../ui.js';
 import {timingHit,timingPosition} from '../../src/systems/timing.js';
 export const door={input:{movement:true,camera:true,interaction:true},create(ctx,c){
  const ui=panel(ctx,'door','새로운 문을 두드리다','움직이는 마커가 초록 구간에 들어오면 두드리세요.');let hits=0,misses=0,attempts=0,last=-Infinity,feedbackUntil=0;
- const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('../../seoul-study/door.css',import.meta.url).href;ctx.mount(document.head,css);
  ui.el.setAttribute('aria-label','문 두드리기 타이밍 미니게임');
  const steps=document.createElement('div');steps.className='knock-steps';steps.innerHTML='<span>01</span><span>02</span><span>03</span>';ui.content.append(steps);
  const legend=document.createElement('div');legend.className='knock-legend';legend.innerHTML='<span>타이밍을 기다리세요</span><strong>초록 영역 = 성공</strong>';ui.content.append(legend);

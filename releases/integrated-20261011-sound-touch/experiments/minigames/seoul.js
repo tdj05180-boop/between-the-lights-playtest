@@ -1,7 +1,7 @@
 import {panel} from '../ui.js';
 import {contactTime} from '../../seoul-study/contact.js';
 import {HIT_RETURN,returnFrame} from '../../seoul-study/hit-return.js';
-import {door} from './door.js';
+import {door} from './door.js?v=door-ready-20261011';
 export const seoulLights={input:{movement:false,camera:false,interaction:true},create(ctx){
  const {view,avatar,scene}=ctx.world(),f=view.features,collected=new Set();let hits=0,transition=null,returnCount=0,immuneUntil=0,release=null,completedAt=null,finished=false,doorGame=null,doorStartedAt=null;const previous={x:avatar.position.x,z:avatar.position.z};
  const start={x:avatar.position.x,z:avatar.position.z};
