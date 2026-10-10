@@ -58,8 +58,8 @@
     },
     {
       "path": "experiments/minigames/door.js",
-      "bytes": 2764,
-      "sha256": "8e251ee8fa5e496ac2b588ed03f75d4e09039d3b789a810f9925566ab4c22566"
+      "bytes": 2602,
+      "sha256": "a2ced6e317d48424ac6ee8fbd9f2efaed2493ef49e82b1e3465a9c3ca408585d"
     },
     {
       "path": "experiments/minigames/management.js",
@@ -73,8 +73,8 @@
     },
     {
       "path": "experiments/minigames/seoul.js",
-      "bytes": 5885,
-      "sha256": "e15a0a86c4575ea7cd43ba85adde94857d9a17da19c57598bd1953a465e64945"
+      "bytes": 5907,
+      "sha256": "77f8173c4c0529b1655b61d9504f009571d6347611e0a6a2656456e975ea6e4b"
     },
     {
       "path": "experiments/minigames/shutter.js",
@@ -88,8 +88,8 @@
     },
     {
       "path": "experiments/register.js",
-      "bytes": 1443,
-      "sha256": "d84913b899a79516a118b2fe0e287236a234b5574c9982b8ce35c7c9f9b29b1b"
+      "bytes": 1487,
+      "sha256": "a62f3291a976fbb7f6355877ded81982d3341faeada2549b32d0eb4b08dcbe82"
     },
     {
       "path": "experiments/scoring.js",
@@ -128,8 +128,8 @@
     },
     {
       "path": "experiments/style.css",
-      "bytes": 3856,
-      "sha256": "f2aa6708aa91c836be5f4c95d8308c21318b0638c303ce2a0e5413754558b87d"
+      "bytes": 3980,
+      "sha256": "22ec5b51a6de20ada05b354d1ce5d2347dcf7d4af4f4d5b2048822f62e93e18c"
     },
     {
       "path": "experiments/ui.js",
@@ -140,6 +140,11 @@
       "path": "index.html",
       "bytes": 328,
       "sha256": "f7584de3dff7902c53ea6a62011bbd9550d1f4d9a32dd630fb7770fc348a9cb7"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 529,
+      "sha256": "fab08202f3f07e99b9cd4b55856e6c64f97ec0e490cf17bde10c3a48084e67d1"
     },
     {
       "path": "office-study/audio-play.html",
@@ -222,24 +227,39 @@
       "sha256": "a2cdc61ce09c6008bf4781cc9379bc1697d003ce5612a5e270f1b6bce07272b1"
     },
     {
+      "path": "pwa/apple-touch-icon.png",
+      "bytes": 3863,
+      "sha256": "8d429308c7051b201fe7df48bd46a96ac1174feb467aa9e423c5ab8969371bd1"
+    },
+    {
+      "path": "pwa/icon-192.png",
+      "bytes": 3612,
+      "sha256": "234438bf7ff2d868e50f0534f6f7bd2f9e104e0a13f8ebff968096ef4f57f4f9"
+    },
+    {
+      "path": "pwa/icon-512.png",
+      "bytes": 11394,
+      "sha256": "0a0452b1599b05fa084ad637c26a2eddfa8be93c4b0b51d0ebfdb3d782715082"
+    },
+    {
       "path": "seoul-study/audio-play.html",
-      "bytes": 9848,
-      "sha256": "e520a6c90d983a55d5d21ab02f858f055bd64bb90051630cb9ee6ef1f6485d2a"
+      "bytes": 9892,
+      "sha256": "516c0e7335ad086b1248d4d990a0dcac285fc97b46729e238f05f272a317be13"
     },
     {
       "path": "seoul-study/audio-tests.html",
-      "bytes": 1221,
-      "sha256": "c78a018f31dc8f2cec04f831b96e243c31f473423e83b0808f8e0fe7da0595d9"
+      "bytes": 1321,
+      "sha256": "303da3fd8c3ec2fc48d5e5722833a89b34dfa34ada191a7ecf65d79ce1e8b6f6"
     },
     {
       "path": "seoul-study/audio-tests.js",
-      "bytes": 5578,
-      "sha256": "82cc43bc1565a50d6ad67e9ce217953d994d59642e7b8859f35221573107d920"
+      "bytes": 5723,
+      "sha256": "6f0baee8a9fdf5ee15da8f714726e0d0ed84e89ed3ea5e697986d0dac5230e83"
     },
     {
       "path": "seoul-study/audio.js",
-      "bytes": 7752,
-      "sha256": "da9553626d049df0cbfd6a3b0e8b3d1984f3422958002ef3bce2d7243cabaa65"
+      "bytes": 10337,
+      "sha256": "740bbd4d27abdd471b40167822a6ebde4e162c0f8847bcd82f0fba82ece4dcf0"
     },
     {
       "path": "seoul-study/audio/SOURCES.txt",
@@ -293,8 +313,8 @@
     },
     {
       "path": "seoul-study/boot.js",
-      "bytes": 1175,
-      "sha256": "7907a87c3d3e6e7fb96e8ac62a750bade786f7742e02df5aa3677b591d7eeba5"
+      "bytes": 1226,
+      "sha256": "de7594e496f0ceecbbf33b43de30d6cbac0170535c62f424a0455810faf3be43"
     },
     {
       "path": "seoul-study/campaign.json",
@@ -312,6 +332,26 @@
       "sha256": "cdbade9490d17501f5d9d012464c91c15e522a8bd4c4bce7d39d6c90e61d47a9"
     },
     {
+      "path": "seoul-study/door-fixture.html",
+      "bytes": 319,
+      "sha256": "6f9394b39464adc61ec09241049ce0664612c79fe43999ee686f9b84a7785ffa"
+    },
+    {
+      "path": "seoul-study/door-fixture.js",
+      "bytes": 2771,
+      "sha256": "b1414026d9e77dc4b612654370477c9131ec5d90c725de6d8643644d9215f62e"
+    },
+    {
+      "path": "seoul-study/door-ready.html",
+      "bytes": 406,
+      "sha256": "36594b8c377e1afad497a26dd175d928c5c3eab1465ea8137fa12a7787034025"
+    },
+    {
+      "path": "seoul-study/door-ready.js",
+      "bytes": 905,
+      "sha256": "c73dd1cc7a5c0c66a2112811a80e9e4c770fb1e3dbcbb8342495df16ce0379a8"
+    },
+    {
       "path": "seoul-study/door.css",
       "bytes": 2899,
       "sha256": "ed194d1525e88a140a27ba38e6bf998e01b6dcc783716ab1280d69cccea6fd0b"
@@ -323,8 +363,8 @@
     },
     {
       "path": "seoul-study/play.html",
-      "bytes": 9629,
-      "sha256": "698214cc483672bbec663d9cd023cf32826f21a0213bca99868f6854c8f49142"
+      "bytes": 9673,
+      "sha256": "9b4817c91851866db86c54be4086c4b14e1f1b2442f01f327936b4b10740207f"
     },
     {
       "path": "seoul-study/space.js",
@@ -338,8 +378,8 @@
     },
     {
       "path": "seoul-study/tests.js",
-      "bytes": 19300,
-      "sha256": "0eb17b953e894e4c7d1a58d6710cec9dd4ce020d9f72cb02410cb5e35c62e22c"
+      "bytes": 20175,
+      "sha256": "1888c04cf23c164fe35ad0ce665a4a7eebaac34665955c26a6d68c961ead1d2d"
     },
     {
       "path": "seoul-study/traffic.js",
@@ -350,6 +390,16 @@
       "path": "src/LICENSES.txt",
       "bytes": 299,
       "sha256": "8c6e4d7899608210b8311ef0eddca7bbcc85721f657ae91789131143ab1a68e6"
+    },
+    {
+      "path": "src/apple-install.css",
+      "bytes": 1794,
+      "sha256": "2022eb146eb688ef5973bbcf4d2e851312993615384ae74067d6f9e8f116251f"
+    },
+    {
+      "path": "src/apple-install.js",
+      "bytes": 2453,
+      "sha256": "55a910bebf0bbf28b0fe69ec50498091c2d1a5452ae8b0a52dcb56bfc86dbb6d"
     },
     {
       "path": "src/audio.js",
@@ -423,8 +473,8 @@
     },
     {
       "path": "src/runtime.js",
-      "bytes": 33494,
-      "sha256": "0bb02e92c57eeb3d0a87e5bd3aca1d14495b28e728e64704668ab4590028acb7"
+      "bytes": 33512,
+      "sha256": "ca836d62f76820085d780a3a19c192d35633d35b705dcd288c743e94f0932e11"
     },
     {
       "path": "src/spaces/legacy-room.js",
@@ -443,8 +493,8 @@
     },
     {
       "path": "src/systems/browser-compat.js",
-      "bytes": 4942,
-      "sha256": "ba2163a944fe46e7023a0539e2fc148f27671b06a7391880c91cacf8391b6e37"
+      "bytes": 5038,
+      "sha256": "688a81ceddff42deec0178a8f70ef4a94e7336417eb87cf547cc8676c9ae59de"
     },
     {
       "path": "src/systems/camera.js",
@@ -522,6 +572,11 @@
       "sha256": "bd0cbc790e6d98da1ce3020f80b753e917cef0fc7f1b29df0bcf93f26c951897"
     },
     {
+      "path": "src/systems/webapp-mode.js",
+      "bytes": 672,
+      "sha256": "764894731f883797f217e4a83108047cdd021de6f41666df25244434289f44f2"
+    },
+    {
       "path": "src/vendor/BufferGeometryUtils.js",
       "bytes": 35555,
       "sha256": "018b6ec0dcbbaea7d68b02d8d1162ab37783b9dbd4cc85fdbc35506690a993ea"
@@ -548,8 +603,8 @@
     },
     {
       "path": "street-study/audio-routing.js",
-      "bytes": 3881,
-      "sha256": "1f629ec67793620feb5bc60b775e5ec21f4d2de55216bcf0a722fa0ed3220cad"
+      "bytes": 3910,
+      "sha256": "3a98f945579954ccea173f42dc0a9c4a7a3a6483b6621c15b9c96c5bdc1930d1"
     },
     {
       "path": "street-study/audio.js",
@@ -593,13 +648,13 @@
     },
     {
       "path": "street-study/play.html",
-      "bytes": 9630,
-      "sha256": "50a1d8949a01868fd856453f5e524797f9d61e037f02cb26cf4fe0c17c0623ac"
+      "bytes": 10176,
+      "sha256": "cb5632824a51ddf22abf51aa5adc7e75618cd6e9d8764e6fefe1ec779634dbbd"
     },
     {
       "path": "street-study/play.js",
-      "bytes": 2638,
-      "sha256": "ae55bf0af7e492589af4dbec191749959988d8aefd01557937a813aed3d09bdc"
+      "bytes": 2707,
+      "sha256": "a0fd5ecc32af6c86cc80ccd738d906e172c1c236f384c6eaac674b4f29fd36a1"
     },
     {
       "path": "street-study/resident.js",
@@ -821,5 +876,6 @@
       "bytes": 696,
       "sha256": "f12f842f18b19d21d3a2629d76dbc70ab11a8487d6a21d2f308b3508942521f7"
     }
-  ]
+  ],
+  "patch": "door-ready-20261011"
 }
