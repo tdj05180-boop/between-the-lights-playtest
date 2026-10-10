@@ -96,6 +96,7 @@ export function createWarehouseStudy(ctx){
  updateAmbient({activeMs=0,playing=false}={}){
  const dt=Math.max(0,activeMs-(this.rollerTime??activeMs))/1000;this.rollerTime=activeMs;
  backgroundWorkers.update(playing?dt:0);
+ k.foodCargo.updatePlacements(features.boxes,player.carryAnchor,features.loaded);
  for(let j=0;j<belts.length;j++){const belt=belts[j],spec=j<3?workflow.belts[j]:{x:-4,z:-16.7,length:1.4,rotation:0},direction=j===2?1:-1;
  const m=new T.Matrix4();belt.phases??=new Float64Array(belt.rollers.count);
  for(let i=0;i<belt.rollers.count;i++){
