@@ -1,0 +1,825 @@
+{
+  "version": "integrated-20261011-sound-touch",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "README.md",
+      "bytes": 440,
+      "sha256": "1ebd7a228a350643a7661539eca10d6a84f3e5f20d9ffed4dfaab20ae9bbf52d"
+    },
+    {
+      "path": "experiments/appearances.js",
+      "bytes": 1120,
+      "sha256": "8d9ca01c9368b8ecdb5a50b13b6a328ae98e51b0a64bf99e0c6194156cdb1001"
+    },
+    {
+      "path": "experiments/data/2003.json",
+      "bytes": 2892,
+      "sha256": "5ae1f5e784a0a8f81edc513047e4eea01a7b28b81c13059188186082c36c0146"
+    },
+    {
+      "path": "experiments/data/2019.json",
+      "bytes": 1799,
+      "sha256": "8826e34640b62a6742d64a137bed13b0e5194437ced41e88cb355ac784813582"
+    },
+    {
+      "path": "experiments/data/2026.json",
+      "bytes": 4219,
+      "sha256": "1a10d03b4649f6e8ffa29377b86d4f6b447d1a0d0762f2e60defdf7db703a10a"
+    },
+    {
+      "path": "experiments/data/scores.json",
+      "bytes": 1030,
+      "sha256": "600bccd351ccfa32ed83b0d991b9f6353144b215636e1dc3a9e384c782add15a"
+    },
+    {
+      "path": "experiments/data/seoul.json",
+      "bytes": 1752,
+      "sha256": "ab93bf2cbb65e0f1c64ac1fb3ec774b48397a4c54b6fa02915f368628fe1182a"
+    },
+    {
+      "path": "experiments/data/train.json",
+      "bytes": 1441,
+      "sha256": "f27f88536fd1e5da5abca4c522a675afdd30bed676743bdf1a35f4f4a738ad3b"
+    },
+    {
+      "path": "experiments/management-state.js",
+      "bytes": 1340,
+      "sha256": "3516ea96de33d7028d192437899ffc609d126a64af25c501826fe7c7cea31596"
+    },
+    {
+      "path": "experiments/minigames/dispatch.js",
+      "bytes": 2873,
+      "sha256": "87fa73d19a7166543aef0c39fe43ff32549fa1a0e1f07f1a49dfd5ccbde7d946"
+    },
+    {
+      "path": "experiments/minigames/door.js",
+      "bytes": 2764,
+      "sha256": "8e251ee8fa5e496ac2b588ed03f75d4e09039d3b789a810f9925566ab4c22566"
+    },
+    {
+      "path": "experiments/minigames/management.js",
+      "bytes": 2164,
+      "sha256": "ae569bb9919eacccceab1e82f12191cc8d39dd7b84421be98fc72183f54ba737"
+    },
+    {
+      "path": "experiments/minigames/office.js",
+      "bytes": 5182,
+      "sha256": "8e9ea09125b19f467d4f9005cb5635a9f6b179f1ce43b159fd36b70ffa750f3f"
+    },
+    {
+      "path": "experiments/minigames/seoul.js",
+      "bytes": 5885,
+      "sha256": "e15a0a86c4575ea7cd43ba85adde94857d9a17da19c57598bd1953a465e64945"
+    },
+    {
+      "path": "experiments/minigames/shutter.js",
+      "bytes": 1996,
+      "sha256": "8a98de26d0d827870dd474e6a8204b77cefb22a1ab68335c88f9ee134acd7623"
+    },
+    {
+      "path": "experiments/minigames/sorting.js",
+      "bytes": 2347,
+      "sha256": "b770aea44aa4ae3680c883f1b355213dc50029001c987f70829f704ad020ad32"
+    },
+    {
+      "path": "experiments/register.js",
+      "bytes": 1443,
+      "sha256": "d84913b899a79516a118b2fe0e287236a234b5574c9982b8ce35c7c9f9b29b1b"
+    },
+    {
+      "path": "experiments/scoring.js",
+      "bytes": 3657,
+      "sha256": "b6d9fab62863718d4a4cb23d3fe7b8fce9b85a6947cbae65fb39f330e4364623"
+    },
+    {
+      "path": "experiments/spaces/city.js",
+      "bytes": 63,
+      "sha256": "c2c0ac9ac8abe76f80165a5fa378dfd3403afe44eacbdefea3f2d457e1b84641"
+    },
+    {
+      "path": "experiments/spaces/kit.js",
+      "bytes": 5158,
+      "sha256": "88b68958f2cbe99befe57a5ea187488dccc160d181fae2020348798bf03c0fb5"
+    },
+    {
+      "path": "experiments/spaces/office.js",
+      "bytes": 1501,
+      "sha256": "2cd8f510e250e90ed9e5097e95d71e47b4f5f9597d4171a6bd422c9229d6914d"
+    },
+    {
+      "path": "experiments/spaces/street.js",
+      "bytes": 18281,
+      "sha256": "0b697f13503d208319aa7d90656f6f27406d53c3d4c08d2681d112d91636268d"
+    },
+    {
+      "path": "experiments/spaces/train.js",
+      "bytes": 1165,
+      "sha256": "3cd1904411c94f62a15d24330ea9dfbce35dd09f8facb4c557a983b007c20559"
+    },
+    {
+      "path": "experiments/spaces/warehouse.js",
+      "bytes": 2215,
+      "sha256": "734cf2e637ffc17401f7a7dd71bb2ca8de74a741d7bdd5d7d98b8e996c8d6a1d"
+    },
+    {
+      "path": "experiments/style.css",
+      "bytes": 3856,
+      "sha256": "f2aa6708aa91c836be5f4c95d8308c21318b0638c303ce2a0e5413754558b87d"
+    },
+    {
+      "path": "experiments/ui.js",
+      "bytes": 1387,
+      "sha256": "492600cf275a39cd2fe3c604f747a03b8d6f5ed1953aa02899f986a212fe6cdd"
+    },
+    {
+      "path": "index.html",
+      "bytes": 328,
+      "sha256": "f7584de3dff7902c53ea6a62011bbd9550d1f4d9a32dd630fb7770fc348a9cb7"
+    },
+    {
+      "path": "office-study/audio-play.html",
+      "bytes": 9820,
+      "sha256": "bc69fed9b80b5ad234fad31e9ee559a4b2a0526177325e5757c95331056d3914"
+    },
+    {
+      "path": "office-study/audio-tests.js",
+      "bytes": 4654,
+      "sha256": "d409fc826b9f7c020dd44129ce4eb058e795b01075af10e365c9a25a81fc5ed6"
+    },
+    {
+      "path": "office-study/audio.js",
+      "bytes": 7213,
+      "sha256": "ed4b4a8b776fc8165b651101816dbf5032497b86ffff8f4d08e06b183c8f6331"
+    },
+    {
+      "path": "office-study/audio/SOURCES.txt",
+      "bytes": 469,
+      "sha256": "edf0d91858c9df4082a58462612ca00903d3132f48ec2c0830163bd3e4212185"
+    },
+    {
+      "path": "office-study/audio/mixkit-creaky-door-open-195.wav",
+      "bytes": 708944,
+      "sha256": "7ce4a2dc95f38ea8f2edb897236545695aaf8deb322f53a2e6a1f8a4ad3af14c"
+    },
+    {
+      "path": "office-study/audio/mixkit-paper-slide-1530.wav",
+      "bytes": 193072,
+      "sha256": "2e945267f56208884153867d062838888e6bddc92b512e130aa9566255ad36bb"
+    },
+    {
+      "path": "office-study/audio/mixkit-small-electric-glitch-2595.wav",
+      "bytes": 180480,
+      "sha256": "a0b1fc7da700d4ee99294b242039836717a9e9e2c53ffa308b72dda7c22a7578"
+    },
+    {
+      "path": "office-study/audio/mixkit-unlock-game-notification-253.wav",
+      "bytes": 247230,
+      "sha256": "60ab6e9b549da2e874a636b918d9e17a96bf3bddce23c68ef48c936930fbe77f"
+    },
+    {
+      "path": "office-study/audio/ovrsoull-deep-bass-cinematic-tension-forensic-noir-investigative-pulse-454724.mp3",
+      "bytes": 4902144,
+      "sha256": "94991bc5f852840eb595780a48837bd9ab5987f3c512cb624a0657c711ed5f7c"
+    },
+    {
+      "path": "office-study/boot.js",
+      "bytes": 1180,
+      "sha256": "f2eac92f2d0c3885054d9076979015c275ba11b521d745e004bda732adf980ed"
+    },
+    {
+      "path": "office-study/campaign.json",
+      "bytes": 191,
+      "sha256": "92c7453881305999a4c477625374d0be6bffcfe8ba5e6b68d9660cd62aaba81d"
+    },
+    {
+      "path": "office-study/layout.js",
+      "bytes": 2383,
+      "sha256": "9f4849b9ab608ca3a0ba8df8a686b0b8377e7bcffa91d259e651bdabc9a25abb"
+    },
+    {
+      "path": "office-study/play.html",
+      "bytes": 9630,
+      "sha256": "03cae7eb899d76b7c455b45aa2aa2e2c737e0575301f9a175da762b1dd73a0a8"
+    },
+    {
+      "path": "office-study/space.js",
+      "bytes": 7601,
+      "sha256": "4b04dbc520967f9a027ba00dd57a0051644afd7e149f245a3620b14f01f2ef8a"
+    },
+    {
+      "path": "office-study/tests.html",
+      "bytes": 670,
+      "sha256": "5e40d0ac93216534a95d39d25662328341bddc01ecd61bc6a5395cae704e4c0b"
+    },
+    {
+      "path": "office-study/tests.js",
+      "bytes": 13672,
+      "sha256": "a2cdc61ce09c6008bf4781cc9379bc1697d003ce5612a5e270f1b6bce07272b1"
+    },
+    {
+      "path": "seoul-study/audio-play.html",
+      "bytes": 9848,
+      "sha256": "e520a6c90d983a55d5d21ab02f858f055bd64bb90051630cb9ee6ef1f6485d2a"
+    },
+    {
+      "path": "seoul-study/audio-tests.html",
+      "bytes": 1221,
+      "sha256": "c78a018f31dc8f2cec04f831b96e243c31f473423e83b0808f8e0fe7da0595d9"
+    },
+    {
+      "path": "seoul-study/audio-tests.js",
+      "bytes": 5578,
+      "sha256": "82cc43bc1565a50d6ad67e9ce217953d994d59642e7b8859f35221573107d920"
+    },
+    {
+      "path": "seoul-study/audio.js",
+      "bytes": 7752,
+      "sha256": "da9553626d049df0cbfd6a3b0e8b3d1984f3422958002ef3bce2d7243cabaa65"
+    },
+    {
+      "path": "seoul-study/audio/SOURCES.txt",
+      "bytes": 582,
+      "sha256": "af17d8c369f99e9cf2f8e50553d2929449e918c8495df6f491581dad8a27c092"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-city-traffic-background-ambience-2930.wav",
+      "bytes": 11853176,
+      "sha256": "ae0d4c7c6a1a2d40361ae345348c5106931cdf3fceb8f23e3b6c2b93eaea2b24"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-completion-of-a-level-2063.wav",
+      "bytes": 528246,
+      "sha256": "f31efc9f074b1da87f9b73bad81800bb4ea2979d132bc217c13f9558833e1ed0"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-correct-answer-tone-2870.wav",
+      "bytes": 345970,
+      "sha256": "084b78463e30dae4aac5edbf9e9c93cdee5ece4a4a688352e6a2b6686f9b1f4a"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-fairy-arcade-sparkle-866.wav",
+      "bytes": 264132,
+      "sha256": "429c4d316d6269a8b66e97698d560f0fde01fb48dbd5ab794208ec5215e897f6"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-knocking-on-a-thick-wooden-door-197.wav",
+      "bytes": 203474,
+      "sha256": "705eb1407d996fe20c267f27b14ac51317a74a28d0e00121a96b4169cc48a554"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-passing-car-and-urban-ambience-1554.wav",
+      "bytes": 2473696,
+      "sha256": "8eb0e3aa4e3a990bd5280b3309fcfac8c549f633caae165f52f7684316b83493"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-small-hit-in-a-game-2072.wav",
+      "bytes": 195632,
+      "sha256": "2da77832ddcce963fd18607c1be61f0f0439533c230efafa4f8803eaebee5afa"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-wrong-answer-fail-notification-946.wav",
+      "bytes": 344000,
+      "sha256": "830b2019b21f9532d1cf2bf3ebb93919c24d92b92a2aa22d231393a4b8ffb472"
+    },
+    {
+      "path": "seoul-study/audio/soulprodmusic-night-city-143869.mp3",
+      "bytes": 5722697,
+      "sha256": "bd79e4ac7fdf5ddf4f1bfa943139b102745d8cf2970c0903fa262918d3cdbb0b"
+    },
+    {
+      "path": "seoul-study/boot.js",
+      "bytes": 1175,
+      "sha256": "7907a87c3d3e6e7fb96e8ac62a750bade786f7742e02df5aa3677b591d7eeba5"
+    },
+    {
+      "path": "seoul-study/campaign.json",
+      "bytes": 154,
+      "sha256": "683322f455668a7b3fede86e9d9a9c042bb7f41f10a6cd1f668feee9b8c131ca"
+    },
+    {
+      "path": "seoul-study/car.js",
+      "bytes": 6098,
+      "sha256": "fbc67f16f8a6cb5f9f218d98a54dbca4b72f4f3d8bfd6ddf42a4069a73bf124a"
+    },
+    {
+      "path": "seoul-study/contact.js",
+      "bytes": 432,
+      "sha256": "cdbade9490d17501f5d9d012464c91c15e522a8bd4c4bce7d39d6c90e61d47a9"
+    },
+    {
+      "path": "seoul-study/door.css",
+      "bytes": 2899,
+      "sha256": "ed194d1525e88a140a27ba38e6bf998e01b6dcc783716ab1280d69cccea6fd0b"
+    },
+    {
+      "path": "seoul-study/hit-return.js",
+      "bytes": 676,
+      "sha256": "69e27abb4796322dbff72cc9a051be2879cb19918fc87708086f980d413549d5"
+    },
+    {
+      "path": "seoul-study/play.html",
+      "bytes": 9629,
+      "sha256": "698214cc483672bbec663d9cd023cf32826f21a0213bca99868f6854c8f49142"
+    },
+    {
+      "path": "seoul-study/space.js",
+      "bytes": 9973,
+      "sha256": "67b110bf8519d76d82d25abaab049c8d3bb2e71c759376204ba5a6116b73b778"
+    },
+    {
+      "path": "seoul-study/tests.html",
+      "bytes": 1040,
+      "sha256": "98ae35de5e6a9417e977a51d1d5642964357f2289bfff6102986164b8dfe3775"
+    },
+    {
+      "path": "seoul-study/tests.js",
+      "bytes": 19300,
+      "sha256": "0eb17b953e894e4c7d1a58d6710cec9dd4ce020d9f72cb02410cb5e35c62e22c"
+    },
+    {
+      "path": "seoul-study/traffic.js",
+      "bytes": 2353,
+      "sha256": "955cf429fcd8fc5708bfe04a5f896f7c839141028a82589b0a8c5921eb7894ba"
+    },
+    {
+      "path": "src/LICENSES.txt",
+      "bytes": 299,
+      "sha256": "8c6e4d7899608210b8311ef0eddca7bbcc85721f657ae91789131143ab1a68e6"
+    },
+    {
+      "path": "src/audio.js",
+      "bytes": 2667,
+      "sha256": "aeb5ecdf09c69a31ab0b50e3b058c660ac7cd8a90ae480d5b2bb0eb027218359"
+    },
+    {
+      "path": "src/content/registry.js",
+      "bytes": 893,
+      "sha256": "a78b57c5b5dc8915c52ae21094958b96d41b978b4fd68a3f099ee85bee5e15bc"
+    },
+    {
+      "path": "src/flow.js",
+      "bytes": 2098,
+      "sha256": "dcbae3f7ce40a97f2d21d02cabd0ff58cde0ac29bc74f77710a5a07e46a23999"
+    },
+    {
+      "path": "src/mobile-controls.css",
+      "bytes": 6206,
+      "sha256": "fba5a9bd136cb53ba77766f432374db3c91c2978eacda92339b9a851a53876f1"
+    },
+    {
+      "path": "src/models/candidate-avatar.js",
+      "bytes": 1491,
+      "sha256": "d1adba2539f236fef3fac4d0781aa18eaa1b68dade5d04c398e5520ad42f5ada"
+    },
+    {
+      "path": "src/models/improved-world.js",
+      "bytes": 7871,
+      "sha256": "d8f751d1c391b19d6ea7bdc96a6c0a97f9bdd850e20adc60e80d1e45be2583ef"
+    },
+    {
+      "path": "src/models/legacy-avatar.js",
+      "bytes": 2314,
+      "sha256": "8c92fcf491ac8f111d54f83fad9c8dea24e238b6073d6ff08d8c8d5d7624ec2b"
+    },
+    {
+      "path": "src/models/legacy-world.js",
+      "bytes": 15267,
+      "sha256": "3545f61c52bfbd160ae86ad080ee72fc7749a254d9fa45e0da524a4034652dfb"
+    },
+    {
+      "path": "src/models/pastel-shapes.js",
+      "bytes": 1290,
+      "sha256": "56e493d6b8aeb6f76b5831ae5d3552404babd12ff0081f43b4b328e92f86c6c0"
+    },
+    {
+      "path": "src/models/pelvis-refined-avatar.js",
+      "bytes": 6489,
+      "sha256": "0cf83d32b79db1c4d180bb4772ecdec4563369a1b0589815d954bd572908bef7"
+    },
+    {
+      "path": "src/models/resources.js",
+      "bytes": 1347,
+      "sha256": "b9afb4c1ffabaf4aa2239bd2b490ef4b0af01dd3d0a0fc34896e2ac3f8a79c70"
+    },
+    {
+      "path": "src/models/static-batch.js",
+      "bytes": 2653,
+      "sha256": "1b2a5e8a845359ea994caaefae0becc67feb5fe80c462cbd55359bef54d8c3a3"
+    },
+    {
+      "path": "src/models/tailored-avatar.js",
+      "bytes": 13842,
+      "sha256": "9388917971ff6ddea9d72418be0e723d594a482a55deea9df83fef63eed49b4c"
+    },
+    {
+      "path": "src/models/tailored-mesh.js",
+      "bytes": 3922,
+      "sha256": "dcd5db9492933da3f1c285db3da766231a656c6642e85c5b3ec1c2e844f7f269"
+    },
+    {
+      "path": "src/runtime.js",
+      "bytes": 33494,
+      "sha256": "0bb02e92c57eeb3d0a87e5bd3aca1d14495b28e728e64704668ab4590028acb7"
+    },
+    {
+      "path": "src/spaces/legacy-room.js",
+      "bytes": 1086,
+      "sha256": "822d1b0ef822e90f810820463469b2b5db03151e7ef855b6abfcd4c23b69b991"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 15166,
+      "sha256": "d15ecfac34da62209d149b2749c87302dba95392270ffcd37ff640030b319804"
+    },
+    {
+      "path": "src/systems/appearances.js",
+      "bytes": 375,
+      "sha256": "2e3237c2c1eb83ddd96af1a5c7b687972258597807e703057e1356ea785daac5"
+    },
+    {
+      "path": "src/systems/browser-compat.js",
+      "bytes": 4942,
+      "sha256": "ba2163a944fe46e7023a0539e2fc148f27671b06a7391880c91cacf8391b6e37"
+    },
+    {
+      "path": "src/systems/camera.js",
+      "bytes": 984,
+      "sha256": "22222ccbc1a32725ca4e160024f6ae043a2e38109ad98cf136638a0cb425fbca"
+    },
+    {
+      "path": "src/systems/content.js",
+      "bytes": 1335,
+      "sha256": "1c2db37188ba08366debf86e4f73e56088f502e7a9fd04a30c3af70b37957d70"
+    },
+    {
+      "path": "src/systems/gameplay-camera.js",
+      "bytes": 874,
+      "sha256": "36e5c2c5d7a24a33fdd1406abefbdacd508e60b3f36e9061b25dbaf04461dc35"
+    },
+    {
+      "path": "src/systems/interaction-prompt.js",
+      "bytes": 1683,
+      "sha256": "d871312d14d8925512aae892f22cad40b17b9bba31bce21a39deef495cde21bd"
+    },
+    {
+      "path": "src/systems/interactions.js",
+      "bytes": 2027,
+      "sha256": "3dd3127e3a93ac99b1f790e240fe734910ce626e3a37afff6f210ae8e6979f46"
+    },
+    {
+      "path": "src/systems/jump.js",
+      "bytes": 566,
+      "sha256": "a745908e19c8f36f45ff748258a269d8bcc8b8cb2f6c545895b1b0c3eccee38c"
+    },
+    {
+      "path": "src/systems/minigames.js",
+      "bytes": 3944,
+      "sha256": "cc5dc097b709748f44b86688d6d6e6e9d6dde8b4181dd9b0e0bf7d7779239f48"
+    },
+    {
+      "path": "src/systems/model-slot.js",
+      "bytes": 457,
+      "sha256": "999318237fdb16f7d8cdf91445a1b8a34d394e4fa19e9ccb76c7d36001d0cc30"
+    },
+    {
+      "path": "src/systems/movement.js",
+      "bytes": 3852,
+      "sha256": "da20ac3a1c8a67142cb40fb6ba9f118542b3ee9d470bada07bd057ccd57916ee"
+    },
+    {
+      "path": "src/systems/part-results.css",
+      "bytes": 2171,
+      "sha256": "f9a9b6ddafaecdd50e1430868c02f6301c947ff612cd206d28e0b5256c8526bd"
+    },
+    {
+      "path": "src/systems/part-results.js",
+      "bytes": 3459,
+      "sha256": "95a2edac8296bb7a4ff7b857bb0599194b96d8e6233ff1c6e121746a4dd83dc3"
+    },
+    {
+      "path": "src/systems/quests.js",
+      "bytes": 5235,
+      "sha256": "1db8727012baf7f5418410d91660f2c17584a9a269f4b8bd11fde69b6b9d179b"
+    },
+    {
+      "path": "src/systems/spaces.js",
+      "bytes": 1350,
+      "sha256": "d39ad27f698a951887f3e2425a98afed10ed485a3fd00e577e2645b0901d3f94"
+    },
+    {
+      "path": "src/systems/time.js",
+      "bytes": 2940,
+      "sha256": "92937db3d36ab57e410d8b00478fa48e7ad7bc7471b0f4f2ee71a85d94a03172"
+    },
+    {
+      "path": "src/systems/timing.js",
+      "bytes": 215,
+      "sha256": "bd0cbc790e6d98da1ce3020f80b753e917cef0fc7f1b29df0bcf93f26c951897"
+    },
+    {
+      "path": "src/vendor/BufferGeometryUtils.js",
+      "bytes": 35555,
+      "sha256": "018b6ec0dcbbaea7d68b02d8d1162ab37783b9dbd4cc85fdbc35506690a993ea"
+    },
+    {
+      "path": "src/vendor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "src/vendor/three.core.min.js",
+      "bytes": 381124,
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de"
+    },
+    {
+      "path": "src/vendor/three.module.min.js",
+      "bytes": 338908,
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6"
+    },
+    {
+      "path": "street-study/architecture.js",
+      "bytes": 10124,
+      "sha256": "10e78aec139b19a71ce48913dee18622af179b83b35949e589d7a84bc3bd2de7"
+    },
+    {
+      "path": "street-study/audio-routing.js",
+      "bytes": 3881,
+      "sha256": "1f629ec67793620feb5bc60b775e5ec21f4d2de55216bcf0a722fa0ed3220cad"
+    },
+    {
+      "path": "street-study/audio.js",
+      "bytes": 5885,
+      "sha256": "b0d53289dc584cd2e40404a3322c33b17928f5874f386e405213b73fe0905b1c"
+    },
+    {
+      "path": "street-study/audio/SOURCES.txt",
+      "bytes": 528,
+      "sha256": "66c4051212d79ec15ffa23a0ff76a1e94d2e97bd4bf52759b4004016e0098638"
+    },
+    {
+      "path": "street-study/audio/bgm.mp3",
+      "bytes": 1738283,
+      "sha256": "95e7032603df57268a9885e9756cbe71a07973adb5a49a19cd776b81e40f1810"
+    },
+    {
+      "path": "street-study/audio/close.mp3",
+      "bytes": 15404,
+      "sha256": "17119e924c07b27d0e2a1ea9cb67a76a7cce137c353f84804ca3c8b584e2ddfb"
+    },
+    {
+      "path": "street-study/audio/down.mp3",
+      "bytes": 34604,
+      "sha256": "0b9f29dcc0a359749b204a163aac26f0e1cbb8da77322752bcdfb66fb1f1e016"
+    },
+    {
+      "path": "street-study/audio/up.mp3",
+      "bytes": 34604,
+      "sha256": "fdefd22306d6ec9e0757f4c71bd734ccc05256361b71f378a819f3b2c4cc3e0e"
+    },
+    {
+      "path": "street-study/campaign.json",
+      "bytes": 307,
+      "sha256": "3c7ac62fcdbb8dad4cce68fd3b2d9f32011abe8740be1b6fbe3d6695db5d1570"
+    },
+    {
+      "path": "street-study/observations.js",
+      "bytes": 1164,
+      "sha256": "cdf98842319f17ac4c3f9785f62add6a18f4162a14187c99b856beee3c03f2d9"
+    },
+    {
+      "path": "street-study/play.html",
+      "bytes": 9630,
+      "sha256": "50a1d8949a01868fd856453f5e524797f9d61e037f02cb26cf4fe0c17c0623ac"
+    },
+    {
+      "path": "street-study/play.js",
+      "bytes": 2638,
+      "sha256": "ae55bf0af7e492589af4dbec191749959988d8aefd01557937a813aed3d09bdc"
+    },
+    {
+      "path": "street-study/resident.js",
+      "bytes": 2538,
+      "sha256": "f8b67380681729b226296110f6f5114d5bf911ff04d5d2e6e2b8ceb77c2b0b83"
+    },
+    {
+      "path": "street-study/shutter-motion.js",
+      "bytes": 1509,
+      "sha256": "5d4fc177373ba9469c6a20118d65ee385b45dd04e588fa7fc830c172576cf062"
+    },
+    {
+      "path": "street-study/street.css",
+      "bytes": 514,
+      "sha256": "ad9e50c938bb5c6a0b96ab322a0d2f029866e9880967383d78f2cdf74631d649"
+    },
+    {
+      "path": "street-study/traffic-models.js",
+      "bytes": 16565,
+      "sha256": "46d0ce9147aa39f78d6afc7d351df7a8dc8aed1ef12334070c0d0772ece73cff"
+    },
+    {
+      "path": "street-study/traffic-state.js",
+      "bytes": 7255,
+      "sha256": "5efbc4dc690d50aa3c57d98838474743b777361256f6d7f4754ab7507a4b57d6"
+    },
+    {
+      "path": "tests/integration/0.json",
+      "bytes": 89,
+      "sha256": "f3fce74689ca0bbf7eb8ad2472a01eb542aceefaab108c9f015715d45176d866"
+    },
+    {
+      "path": "tests/integration/1.json",
+      "bytes": 91,
+      "sha256": "8be630f14e03553d5f6c3b243b1f1e5f17d392a6d69db6156dec0573633b8428"
+    },
+    {
+      "path": "tests/integration/2.json",
+      "bytes": 89,
+      "sha256": "89c82f1c9bb1bab9d486d526aa4451fc3df7c5b1a1a80003d20d0112899db771"
+    },
+    {
+      "path": "tests/integration/3.json",
+      "bytes": 90,
+      "sha256": "a3f1f08fc7aab3141e59fbe938c39cd8aedfdf7dcb86c326f1f7b5d059af7929"
+    },
+    {
+      "path": "tests/integration/4.json",
+      "bytes": 90,
+      "sha256": "4cd770424788ac5f437f3e658a15b73ad5b821f09f8a8bb831aad813b746bb73"
+    },
+    {
+      "path": "tests/integration/5.json",
+      "bytes": 89,
+      "sha256": "074c321e5b6745fad021776260a325527ab7e7a917d2937c5a0ae3df4e4fe376"
+    },
+    {
+      "path": "tests/integration/all.json",
+      "bytes": 268,
+      "sha256": "dfc2cd0678df73a4bcdd8f1818a31d1d3bfff1b5f79cea8cbd2d125113955d6e"
+    },
+    {
+      "path": "tests/integration/boot.js",
+      "bytes": 2822,
+      "sha256": "e01129d7498536f25dd42e7bdc95c478347f65967d36d5bf5beb79f4cc8e2e08"
+    },
+    {
+      "path": "tests/integration/browser.html",
+      "bytes": 593,
+      "sha256": "8027e4aab93cbad21d2f54e9a7ee40eaf98121fad9b63d1a702803aa5aafdfb6"
+    },
+    {
+      "path": "tests/integration/browser.js",
+      "bytes": 9773,
+      "sha256": "f7b3079540ea702b93d225802ac1b894244c4d6f78532dd35fe74c9c0aa6dade"
+    },
+    {
+      "path": "tests/integration/menu.html",
+      "bytes": 270,
+      "sha256": "5e1025ff8a6540f1d97832ba271e3275037d213a8a05b29d7846f35fe2ba2f68"
+    },
+    {
+      "path": "tests/integration/menu.js",
+      "bytes": 2015,
+      "sha256": "d9ee17b49ff9e50979d98cb4070b989d24d68fe1b338323bb9943141e3c763af"
+    },
+    {
+      "path": "tests/integration/play.html",
+      "bytes": 9638,
+      "sha256": "a254e83c1778e3639886b6469d8c2f93a3f272870d37924b8cbc32bbd65e9d80"
+    },
+    {
+      "path": "warehouse-study/architecture.js",
+      "bytes": 9458,
+      "sha256": "3796482608088c2bb67cd9695f8fc6860f44798194f169d4df4e92ae388ff88a"
+    },
+    {
+      "path": "warehouse-study/audio.js",
+      "bytes": 6882,
+      "sha256": "f96f02a6621c60fbf735f739705faa13eefd747e00208a8699a750cbe4e4f4da"
+    },
+    {
+      "path": "warehouse-study/audio/SOURCES.txt",
+      "bytes": 1760,
+      "sha256": "06275988f8d3773ea29c7de6e85a51fc148d0992ae7a4619f142affb4937c199"
+    },
+    {
+      "path": "warehouse-study/audio/bgm.mp3",
+      "bytes": 3829803,
+      "sha256": "9271ab07c3fd86f8a6123fb9f3d7def958083c4d7bdb716f78c82857c012a044"
+    },
+    {
+      "path": "warehouse-study/audio/conveyor.mp3",
+      "bytes": 60812,
+      "sha256": "e2cdd9991ed7c8310d2a820c15e18244e8721bff136cc99b9be8c3103afa5320"
+    },
+    {
+      "path": "warehouse-study/audio/licenses/kenney-impact.txt",
+      "bytes": 608,
+      "sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db"
+    },
+    {
+      "path": "warehouse-study/audio/licenses/kenney-interface.txt",
+      "bytes": 574,
+      "sha256": "f7966c773bbed0eca6a9c75081c44a178b38eae112724dbb5fdfbd4192d118a9"
+    },
+    {
+      "path": "warehouse-study/audio/pickup.mp3",
+      "bytes": 6940,
+      "sha256": "9c9249778d91be7945d3bd7b5bb549d903fbd67de9de23b1c391dc9c480b8b30"
+    },
+    {
+      "path": "warehouse-study/audio/success.mp3",
+      "bytes": 4432,
+      "sha256": "b04566aa17984dd1fbaec30fe68376bb27e64ae9313f6f3103c0476a2a71113c"
+    },
+    {
+      "path": "warehouse-study/audio/truck-load.mp3",
+      "bytes": 2238,
+      "sha256": "7012a3f1a734c1d894bddd04322110b7ae6493b554c070eea9939fe1ec71ba75"
+    },
+    {
+      "path": "warehouse-study/background-workers.js",
+      "bytes": 3817,
+      "sha256": "56c1ef6d048c388aa2febb08abba08ded39a6a0b6993fd7c27d7a13976ba1982"
+    },
+    {
+      "path": "warehouse-study/campus.js",
+      "bytes": 3844,
+      "sha256": "ab900d37b83d78bfc6f5bc3b641e4f8aa893178c9626455b495dd2be73425a23"
+    },
+    {
+      "path": "warehouse-study/cargo.js",
+      "bytes": 774,
+      "sha256": "302b737e8178addcc0e9bc89ab75bc97c1702aed37f911683bd473b2d43f128b"
+    },
+    {
+      "path": "warehouse-study/chapter.json",
+      "bytes": 1481,
+      "sha256": "3ed60cdebd5c29f57d621e74e692627fa0d6deeecf3b45404511f005d5afcb86"
+    },
+    {
+      "path": "warehouse-study/conveyor-ui.css",
+      "bytes": 739,
+      "sha256": "3e25d677d9bc5bd1618d110cd54afbd5437c82fa769f52c9f947bf6ba28a907b"
+    },
+    {
+      "path": "warehouse-study/conveyor.js",
+      "bytes": 2273,
+      "sha256": "ecdd380e672f1d10745b73847bfd908c14c871271cda78023bbabd6a9afe1abb"
+    },
+    {
+      "path": "warehouse-study/food-cargo.js",
+      "bytes": 7352,
+      "sha256": "49766b3cd5c5cd424b5a212777079904ac9e1bc315e107229ba02fbba69cadef"
+    },
+    {
+      "path": "warehouse-study/geometry.js",
+      "bytes": 3399,
+      "sha256": "2fe1aa2c982c8f003bd90cacdfe68d99e64b1ca0ebdb9031596f7dbbadfa9a72"
+    },
+    {
+      "path": "warehouse-study/inbound-plan.js",
+      "bytes": 997,
+      "sha256": "000042d38216bda9815617561697752f203b8e3e4430e905ffdd3f98103b99af"
+    },
+    {
+      "path": "warehouse-study/inbound.js",
+      "bytes": 4581,
+      "sha256": "9833d644fbf70cf16799de3a98dd521fb841395c7f7a60d813d4cd2cd65efa57"
+    },
+    {
+      "path": "warehouse-study/office.js",
+      "bytes": 2886,
+      "sha256": "59ebc6974c40454aba2df02bfbd34931f2065b8e59e5e669bc2a25dff50e0a22"
+    },
+    {
+      "path": "warehouse-study/props.js",
+      "bytes": 6519,
+      "sha256": "ef8c0c9d9424d24754b88fef65a8634869de2d7d4e54ec7a51bddbc1d11cd095"
+    },
+    {
+      "path": "warehouse-study/reach.js",
+      "bytes": 2961,
+      "sha256": "ff20081aa1a59a62ae6b61c666bc3715393a66b6255c815f7d694148ceb1a44d"
+    },
+    {
+      "path": "warehouse-study/sorting.js",
+      "bytes": 5563,
+      "sha256": "b7c80c29d0d90866479854aa7e7c7971e894615cd4bfcb551f8a6f328f819c54"
+    },
+    {
+      "path": "warehouse-study/space.js",
+      "bytes": 10863,
+      "sha256": "d7b21bea475b020b0dc21321b87496bae189367221af23c29403e53fc90203c9"
+    },
+    {
+      "path": "warehouse-study/workflow-layout.js",
+      "bytes": 696,
+      "sha256": "f12f842f18b19d21d3a2629d76dbc70ab11a8487d6a21d2f308b3508942521f7"
+    }
+  ]
+}
