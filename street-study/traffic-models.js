@@ -79,7 +79,7 @@ function bicycleModel(){
   const distance=Math.min(L+l-.001,Math.hypot(y,z)),bend=Math.PI-Math.acos(T.MathUtils.clamp((L*L+l*l-distance*distance)/(2*L*l),-1,1));
   hip.rotation.x=Math.atan2(-z,-y)-Math.atan2(l*Math.sin(bend),L+l*Math.cos(bend));knee.rotation.x=bend;foot.rotation.x=-hip.rotation.x-bend;
  }
- const helmet=mesh(rider.object,new T.SphereGeometry(.18,12,7,0,Math.PI*2,0,Math.PI*.55),mat(0xbda77c),0,1.71,0);helmet.scale.set(1, .67,1.02);
+ const helmet=mesh(bones.head,new T.SphereGeometry(.18,12,7,0,Math.PI*2,0,Math.PI*.55),mat(0xbda77c),0,.11,0);helmet.scale.set(1, .67,1.02);
  batchStatic(root,new Set([...wheels,crank,rider.object]));
  return {root,update(distance){const angle=distance/.34;wheels.forEach(w=>w.rotation.x=angle);crank.rotation.x=angle*.47;const phase=angle*.47;pedals.forEach(p=>p.rotation.x=-phase);leg(1,phase);leg(-1,phase+Math.PI);for(const s of [-1,1]){bones['shoulder'+s].rotation.set(-.62,0,s*.05);bones['elbow'+s].rotation.x=-.63;}bones.body.rotation.x=.10;}};
 }
@@ -137,3 +137,4 @@ export function createStreetTraffic(world,player,obstacles){
  pose(0);
  return {root,state,update(dt){state.update(dt,player.avatar.position,obstacles);pose(dt);},blocksPlayer:state.blocksPlayer,snapshot:state.snapshot};
 }
+
