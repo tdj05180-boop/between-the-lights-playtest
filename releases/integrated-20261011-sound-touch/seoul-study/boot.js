@@ -1,4 +1,4 @@
-import '../experiments/register.js';
+import '../experiments/register.js?v=door-ready-20261011';
 import {startGame} from '../src/runtime.js';
 import {createSession} from '../experiments/scoring.js';
 import {GameplayCamera} from '../src/systems/gameplay-camera.js';
