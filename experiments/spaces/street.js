@@ -4,6 +4,7 @@ import {batchStatic} from '../../src/models/static-batch.js';
 import {addNeighbourhood,surroundingObstacles} from '../../street-study/architecture.js';
 import {createShutterMotion,shutterSlatPose} from '../../street-study/shutter-motion.js';
 import {createStreetResident} from '../../street-study/resident.js';
+import {addRoadDetails,createStreetTraffic} from '../../street-study/traffic-models.js';
 import {observations} from '../../street-study/observations.js';
 import {createInteractionPrompt} from '../../src/systems/interaction-prompt.js';
 import {ownScene} from '../../src/spaces/legacy-room.js';
@@ -53,8 +54,7 @@ export const streetSpace={
   // Paving seams and curb joints share batches; no individual tile draw calls.
   for(let x=-24.5;x<25;x+=1){box(.018,.006,4.3,0xb9bdaf,x,.11,1.5).castShadow=false;box(.018,.014,.25,0xacb29f,x,.122,3.75).castShadow=false;}
   for(let z=-.5;z<3.7;z+=.72)box(50,.006,.016,0xb9bdaf,0,.11,z).castShadow=false;
-  for(let x=-65;x<66;x+=3.1)box(1.45,.007,.07,0xe5ddbb,x,-.003,6.05).castShadow=false;
-  for(let z=4.1;z<7.9;z+=.55)box(1.9,.012,.3,0xdddac6,-8.8,.003,z).castShadow=false;
+  const roadSignals=addRoadDetails(world);
   // Sign atlas: one modest texture shared by all five shopfronts.
   const cv=document.createElement('canvas');cv.width=2048;cv.height=64;const g=cv.getContext('2d');
   g.fillStyle='#eee5cf';g.fillRect(0,0,2048,64);g.textAlign='center';g.textBaseline='middle';
@@ -138,13 +138,16 @@ export const streetSpace={
   }
   for(const b of buildings){box(1.2,1.3,.13,palette.trim,b.x,b.h-1.1,-5.04);box(1.04,1.12,.06,palette.glass,b.x,b.h-1.1,-5.12);}
   // The walking limits lie before distant intersections; planting/rail returns mark the edge.
-  for(const x of [-25,25])for(const z of [1.2,10.7]){box(.5,.25,3.5,palette.brick,x,.22,z);box(.48,.45,3.4,palette.leaf,x,.56,z);}
+  const edgePlanters=[];
+  for(const x of [-25,25])for(const z of [.9,11.3]){box(.5,.25,2.2,palette.brick,x,.22,z);box(.48,.45,2.1,palette.leaf,x,.56,z);edgePlanters.push({x,z,w:.5,d:2.2,h:.8});}
   const prompt=createInteractionPrompt({own:fn=>scope.own(fn),mount:(parent,node)=>{parent.appendChild(node);scope.own(()=>node.remove());return node;}},scene);
   const observed=[];
   const metricsBefore=modelMetrics(world);
   const originals=new Set();world.traverse(n=>{if(n.material&&!Array.isArray(n.material))originals.add(n.material);});
   const batch=batchStatic(world,new Set([slats,rail,npc.object,neighbour.object]),{cellSize:8}),metricsAfter=modelMetrics(world);
   const retained=new Set();world.traverse(n=>{for(const m of Array.isArray(n.material)?n.material:[n.material])if(m)retained.add(m);});for(const m of originals)if(!retained.has(m))m.dispose();
+  // Dynamic actors are installed after static batching; their local collisions never affect other spaces.
+  const traffic=createStreetTraffic(world,player,[...activeObstacles,...edgePlanters]);
   scene.add(new T.HemisphereLight(0xf4f1e5,0x8d9c88,1.5));
   const sun=new T.DirectionalLight(0xffedcf,2.0);sun.position.set(-15,27,18);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-30,right:30,top:25,bottom:-25,near:.5,far:90});sun.shadow.normalBias=.025;sun.shadow.bias=-.0002;scene.add(sun);
   const fill=new T.DirectionalLight(0xd9edf0,.35);fill.position.set(10,8,-5);scene.add(fill);
@@ -152,7 +155,7 @@ export const streetSpace={
   const focusPos=new T.Vector3(2.8,2.45,5.9),focusTarget=new T.Vector3(0,1.55,-.6),direction=new T.Vector3(),hit=new T.Vector3(),ray=new T.Ray();
   const cameraBoxes=activeObstacles.filter(o=>o.h>2.5).map(o=>new T.Box3(new T.Vector3(o.x-o.w/2-.25,0,o.z-o.d/2-.25),new T.Vector3(o.x+o.w/2+.25,o.h+.2,o.z+o.d/2+.25)));
   let focusBlend=0;
-  const view={renderer,camera,scene,world,...player,canWalk(x,z,r=.26){return canWalkStreet(x,z,r)&&!surroundings.additionalObstacles.concat([{x:2.3,z:.35,w:.66,d:.62},{x:6.8,z:10.6,w:.5,d:.5}]).some(o=>Math.abs(x-o.x)<o.w/2+r&&Math.abs(z-o.z)<o.d/2+r);},
+  const view={renderer,camera,scene,world,...player,canWalk(x,z,r=.26){return canWalkStreet(x,z,r)&&!traffic.blocksPlayer(x,z,r)&&!surroundings.additionalObstacles.concat([{x:2.3,z:.35,w:.66,d:.62},{x:6.8,z:10.6,w:.5,d:.5}]).some(o=>Math.abs(x-o.x)<o.w/2+r&&Math.abs(z-o.z)<o.d/2+r);},
    optionalTargets:()=>observations,
    interactOptional(id){const t=observations.find(o=>o.id===id);if(!t)return;observed.push(id);controls.notify(t.text);},
    showInteraction(target){prompt.show(target?{...target,name:target.name??(target.id==='shutter'?'가게 셔터':target.label),action:target.action??(target.id==='shutter'?'열기':'대화하기')}:null);},
@@ -162,14 +165,14 @@ export const streetSpace={
     for(const bounds of cameraBoxes)if(!bounds.containsPoint(target)&&ray.intersectBox(bounds,hit))distance=Math.min(distance,Math.max(.15,hit.distanceTo(target)-.06));
     cam.position.copy(target).addScaledVector(direction,distance);
    },
-   updateAmbient({dt,elapsed}){updateShutter(dt);npc.update({dt,speed:0,moving:false,elapsed,carrying:false});neighbour.update({dt,speed:0,moving:false,elapsed,carrying:false});},
+   updateAmbient({dt,elapsed,playing}){updateShutter(dt);npc.update({dt,speed:0,moving:false,elapsed,carrying:false});neighbour.update({dt,speed:0,moving:false,elapsed,carrying:false});traffic.update(playing?dt:0);roadSignals.update(traffic.snapshot().time);},
    updatePlayerHeight(dt){const z=player.avatar.position.z,floor=.11-.12*T.MathUtils.smoothstep(z,3.55,3.95)+.12*T.MathUtils.smoothstep(z,8.05,8.45);player.avatar.position.y=T.MathUtils.lerp(player.avatar.position.y,floor,dt*10);player.avatarShadow.position.set(player.avatar.position.x,floor+.006,z);}
   };
   scene.userData.streetMetrics={before:metricsBefore,after:metricsAfter,batch,buildings:buildings.length+surroundings.buildingCount,shadowMap:1024,atlasBytes:Math.ceil((2048*64+1024*512+16*256)*4*4/3)};
   const frames=[];let previousFrame=0;
   const ambient=view.updateAmbient;view.updateAmbient=state=>{ambient(state);const now=performance.now();if(state.dt>0&&previousFrame&&frames.length<240)frames.push(now-previousFrame);previousFrame=now;};
   // Read-only, test-only measurements; never used to drive the game clock or movement.
-  const diagnostic=()=>({shutter:{progress:shutter.progress,target:shutter.target,focus:shutter.focus,bottomY:rail.position.y,aperture:shutter.aperture,openingFraction:shutter.openingFraction,direction:shutter.direction,contacts:shutter.contacts,closing:shutter.closing,closed:shutter.progress===0},observed:[...observed],...scene.userData.streetMetrics,render:{...renderer.info.render},memory:{...renderer.info.memory},camera:camera.position.toArray(),cameraInside:cameraBoxes.some(b=>b.containsPoint(camera.position)),frameMs:[...frames]});
+  const diagnostic=()=>({traffic:traffic.snapshot(),shutter:{progress:shutter.progress,target:shutter.target,focus:shutter.focus,bottomY:rail.position.y,aperture:shutter.aperture,openingFraction:shutter.openingFraction,direction:shutter.direction,contacts:shutter.contacts,closing:shutter.closing,closed:shutter.progress===0},observed:[...observed],...scene.userData.streetMetrics,render:{...renderer.info.render},memory:{...renderer.info.memory},camera:camera.position.toArray(),cameraInside:cameraBoxes.some(b=>b.containsPoint(camera.position)),frameMs:[...frames]});
   window.streetStatus=diagnostic;scope.own(()=>{if(window.streetStatus===diagnostic)delete window.streetStatus;});
   scope.own(()=>{slats.dispose();});
   return ownScene(view,[player.avatar,player.avatarShadow]);
