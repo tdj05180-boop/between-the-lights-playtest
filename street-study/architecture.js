@@ -15,6 +15,7 @@ export const neighbours=[
 export const utilityXs=[-143,-127,-111,-95,-79,-63,-47,-36,-23,-12,12,23,36,47,63,79,95,111,127,143];
 export const surroundingObstacles=neighbours.map(b=>({x:b.x,z:b.z,w:b.w,d:b.d,h:b.h+1.3}));
 export function addNeighbourhood(world,scene){
+ let buildingCount=0;
  const mats=new Map();const m=c=>{if(!mats.has(c))mats.set(c,material(c));return mats.get(c);};
  const box=(p,w,h,d,c,x,y,z,r=.016)=>mesh(p,bevelBox(w,h,d,r),m(c),x,y,z);
  const cyl=(p,r,h,c,x,y,z)=>mesh(p,new T.CylinderGeometry(r,r,h,8),m(c),x,y,z);
@@ -30,6 +31,7 @@ export function addNeighbourhood(world,scene){
   box(a,w+.26,.10,.27,wood,0,-h/2-.1,.08);
  }
  function building(b,i=-1,far=false){
+  buildingCount++;
   const p=new T.Group();world.add(p);p.position.set(b.x,0,b.z);p.rotation.y=b.south?Math.PI:0;
   box(p,b.w,b.h,b.d,b.c,0,b.h/2+.1,0);
   box(p,b.w+.12,.3,b.d+.12,wood,0,.27,0);
@@ -43,9 +45,12 @@ export function addNeighbourhood(world,scene){
    window(p,0,1.8+floor*2.9,-front-.04,1.1,1.15,Math.PI);
    for(const side of [-1,1])window(p,side*(b.w/2+.03),1.8+floor*2.9,0,1,1.2,side*Math.PI/2);
   }
+  const style=b.style??(i%3+3)%3;
   box(p,b.w-1.1,2.15,.09,metal,0,1.26,front+.055);
-  box(p,b.w-1.38,1.94,.05,glass,0,1.28,front+.13);
-  for(const x of [-b.w*.22,0,b.w*.22])box(p,.075,2.04,.08,trim,x,1.3,front+.19);
+  box(p,b.w-1.38,1.94,.05,style===2?0x9ca89d:glass,0,1.28,front+.13);
+  for(const x of style===1?[-b.w*.30,b.w*.16]:[-b.w*.22,0,b.w*.22])box(p,.075,2.04,.08,trim,x,1.3,front+.19);
+  if(style===1){const canopy=box(p,b.w-.6,.14,.85,0x9caf98,0,2.42,front+.48);canopy.rotation.x=.12;}
+  if(style===2)for(let n=0;n<6;n++)box(p,b.w-1.5,.025,.022,0x798c82,0,.55+n*.24,front+.17);
   box(p,.05,.35,.08,wood,.15,1.1,front+.26);
   box(p,b.w-.4,.15,.42,trim,0,.14,front+.17);
   if(i>=0){
@@ -80,11 +85,32 @@ export function addNeighbourhood(world,scene){
  neighbours.forEach((b,i)=>building(b,i));
  // Continuations: two cross streets and recessed blocks. Far buildings retain roofs/windows.
  for(const x of [-30,30]){
-  box(world,5.8,.12,100,0x9ca6a5,x,-.07,5.5).castShadow=false;
-  for(const s of [-1,1])box(world,1.7,.14,100,0xcacabb,x+s*3.8,.0,5.5).castShadow=false;
+  box(world,5.8,.12,300,0x9ca6a5,x,-.07,0).castShadow=false;
+  for(const s of [-1,1])for(const [a,b]of [[-150,3.8],[8.3,150]]){
+   box(world,1.7,.16,b-a,0xcacabb,x+s*3.8,.025,(a+b)/2).castShadow=false;
+   box(world,.18,.14,b-a,trim,x+s*2.99,.045,(a+b)/2).castShadow=false;
+  }
  }
- for(const x of [-56,-46,-36,36,46,56])for(const south of [false,true])building({x,z:south?18:-5,w:7.8,d:8,h:6+(Math.abs(x)%3)*1.3,c:south?0xc4c6b7:0xc4b5a8,roof:Math.abs(x)%4?'tile':'terrace',south},-1,true);
- for(const z of [-23,-35,35,47])for(const x of [-20,-9,3,15,25])building({x,z,w:7.8,d:6,h:5.5+Math.abs(x)%4,c:z<0?0xb3c2b5:0xcac1ad,roof:Math.abs(x)%2?'tile':'terrace',south:z>0},-1,true);
+ const muted=[0xc4c6b7,0xc4b5a8,0xb3c2bb,0xd2c3a8,0xb9bec8,0xc9b3aa];
+ for(const [i,x]of [-140,-128,-116,-104,-92,-80,-68,-58,-48,-39,39,49,60,72,84,96,108,120,132,144].entries())for(const south of [false,true]){
+  const n=i+(south?3:0);building({x,z:south?17+n%3:-5-n%2,w:6.7+n%4*.55,d:7+n%3,h:5.3+n%5*1.1,c:muted[n%muted.length],roof:n%3?'tile':'terrace',style:n%3,south},-1,true);
+ }
+ for(const z of [-23,-35,35,47])for(const x of [-20,-10,0,10,20])building({x,z,w:7.8,d:6,h:5.5+Math.abs(x+z)%4,c:z<0?0xb3c2b5:0xcac1ad,roof:Math.abs(x+z)%3?'tile':'terrace',south:z>0},-1,true);
+ // Low-cost distant silhouettes enclose every view without expanding the playable rectangle.
+ for(const z of [-126,-102,-78,-56,65,88,111,135])for(const x of [-47,-20,0,19,46]){
+  const h=6+(Math.abs(x+z)%5),c=muted[Math.abs(x+z)%muted.length];
+  const b=mesh(world,new T.BoxGeometry(10,h,9),m(c),x,h/2,z);b.castShadow=false;
+  box(world,10.5,.25,9.5,trim,x,h+.13,z).castShadow=false;
+  for(const side of [-1,1])for(const dx of [-2.5,2.5])mesh(world,new T.BoxGeometry(1.9,1.35,.05),m(glass),x+dx,h-1.8,z+side*4.54).castShadow=false;
+ }
+ // Cross-street poles connect at the main street corner rather than ending in empty space.
+ for(const x of [-33.8,33.8])for(const side of [-1,1]){
+  const zs=side<0?[-141,-119,-97,-75,-53,-31,-9,3.25]:[9.15,29,51,73,95,117,139];
+  for(const z of zs){cyl(world,.10,6.1,0xa8a99a,x,3.14,z).castShadow=false;box(world,.15,.09,1.25,metal,x,5.6,z).castShadow=false;}
+  for(let i=1;i<zs.length;i++)for(const dx of [-.17,.17]){
+   const a=zs[i-1],b=zs[i],curve=new T.QuadraticBezierCurve3(new T.Vector3(x+dx,5.83,a),new T.Vector3(x+dx,5.1,(a+b)/2),new T.Vector3(x+dx,5.83,b));mesh(world,new T.TubeGeometry(curve,6,.014,3,false),m(metal)).castShadow=false;
+  }
+ }
  // Utility lines stay in the two road-side corridors, clear of every building volume.
  for(const z of [3.25,9.15])for(const x of utilityXs){
   const distant=Math.abs(x)>25;
@@ -102,14 +128,9 @@ export function addNeighbourhood(world,scene){
   box(world,.34,.48,.2,metal,x,1.6,z+.14).castShadow=false;
   for(const dx of [-.48,.48]){const curve=new T.QuadraticBezierCurve3(new T.Vector3(x+dx,5.83,z),new T.Vector3(x,5.55,z+.12),new T.Vector3(x,1.84,z+.20));mesh(world,new T.TubeGeometry(curve,6,.012,3,false),m(metal)).castShadow=false;}
  }
- // Parked compact car: joined body, glazed cabin, bumpers, wheels, lamps.
- const car=new T.Group();world.add(car);car.position.set(16,.02,8.15);
- box(car,3.8,.6,1.55,0xadc3bf,0,.65,0,.12);box(car,2.15,.6,1.38,0xadc3bf,-.2,1.13,0,.13);
- for(const s of [-1,1]){box(car,1.7,.38,.028,glass,-.2,1.2,s*.703,.035);box(car,.055,.43,.05,metal,-.3,1.18,s*.73);for(const x of [-1.16,1.15]){const wheel=mesh(car,new T.CylinderGeometry(.32,.32,.17,12),m(0x596461),x,.36,s*.76);wheel.rotation.x=Math.PI/2;}}
- for(const x of [-1.94,1.94]){box(car,.08,.15,1.38,metal,x,.42,0);for(const z of [-.52,.52])box(car,.06,.16,.28,x>0?trim:0xb88076,x,.7,z);}
  // Low background terrain supports the horizon instead of a visible floating base.
  const skyCanvas=document.createElement('canvas');skyCanvas.width=16;skyCanvas.height=256;const skyCtx=skyCanvas.getContext('2d'),gradient=skyCtx.createLinearGradient(0,0,0,256);gradient.addColorStop(0,'#88b5c8');gradient.addColorStop(.52,'#c9dedb');gradient.addColorStop(.7,'#e5e9e0');gradient.addColorStop(1,'#e5e9e0');skyCtx.fillStyle=gradient;skyCtx.fillRect(0,0,16,256);
  const skyTexture=new T.CanvasTexture(skyCanvas);skyTexture.colorSpace=T.SRGBColorSpace;
  const sky=new T.Mesh(new T.SphereGeometry(180,24,14),new T.MeshBasicMaterial({map:skyTexture,side:T.BackSide,depthWrite:false,fog:false}));sky.renderOrder=-1;scene.add(sky);
- return {buildingCount:neighbours.length+32,additionalObstacles:[{x:16,z:8.15,w:4,d:1.7,h:1.55},...[-23,-12,12,23].flatMap(x=>[3.25,9.15].map(z=>({x,z,w:.28,d:.28,h:6.2})))]};
+ return {buildingCount:buildingCount+40,additionalObstacles:[...[-23,-12,12,23].flatMap(x=>[3.25,9.15].map(z=>({x,z,w:.28,d:.28,h:6.2})))]};
 }
