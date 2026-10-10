@@ -408,8 +408,8 @@
     },
     {
       "path": "street-study/traffic-models.js",
-      "bytes": 15924,
-      "sha256": "01611e7f01eae25d42788935eb388273239897da717a93f399144de96bd046da"
+      "bytes": 16565,
+      "sha256": "46d0ce9147aa39f78d6afc7d351df7a8dc8aed1ef12334070c0d0772ece73cff"
     },
     {
       "path": "street-study/traffic-state.js",
