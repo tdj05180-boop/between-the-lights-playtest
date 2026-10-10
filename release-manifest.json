@@ -1,5 +1,5 @@
 {
-  "version": "integrated-20261010-office-audio",
+  "version": "integrated-20261011-sound-touch",
   "files": [
     {
       "path": ".nojekyll",
@@ -33,13 +33,13 @@
     },
     {
       "path": "experiments/data/scores.json",
-      "bytes": 543,
-      "sha256": "f8e5e68c3599bac1757d2adbae9446996a589248647f8732fec197a3397ea5d4"
+      "bytes": 1030,
+      "sha256": "600bccd351ccfa32ed83b0d991b9f6353144b215636e1dc3a9e384c782add15a"
     },
     {
       "path": "experiments/data/seoul.json",
-      "bytes": 2409,
-      "sha256": "b480b385b12417ab750f09f1ffd60085e16c0682d1a9eae81f61373198662f9a"
+      "bytes": 1752,
+      "sha256": "ab93bf2cbb65e0f1c64ac1fb3ec774b48397a4c54b6fa02915f368628fe1182a"
     },
     {
       "path": "experiments/data/train.json",
@@ -58,8 +58,8 @@
     },
     {
       "path": "experiments/minigames/door.js",
-      "bytes": 895,
-      "sha256": "8e4c3ac8c8437e9762a4a27d0065a2e688dd426f2da30af134297183d3ada774"
+      "bytes": 2764,
+      "sha256": "8e251ee8fa5e496ac2b588ed03f75d4e09039d3b789a810f9925566ab4c22566"
     },
     {
       "path": "experiments/minigames/management.js",
@@ -70,6 +70,11 @@
       "path": "experiments/minigames/office.js",
       "bytes": 5182,
       "sha256": "8e9ea09125b19f467d4f9005cb5635a9f6b179f1ce43b159fd36b70ffa750f3f"
+    },
+    {
+      "path": "experiments/minigames/seoul.js",
+      "bytes": 5885,
+      "sha256": "e15a0a86c4575ea7cd43ba85adde94857d9a17da19c57598bd1953a465e64945"
     },
     {
       "path": "experiments/minigames/shutter.js",
@@ -83,18 +88,18 @@
     },
     {
       "path": "experiments/register.js",
-      "bytes": 1344,
-      "sha256": "08d3e8220897a1766f8b8d8714b28fe5e426c5358779c39c6fcf873b3e31e03d"
+      "bytes": 1443,
+      "sha256": "d84913b899a79516a118b2fe0e287236a234b5574c9982b8ce35c7c9f9b29b1b"
     },
     {
       "path": "experiments/scoring.js",
-      "bytes": 3287,
-      "sha256": "215a60d4ca8ac0d35b020cc97d871f962847efe60010cc7a1bc395be130889ad"
+      "bytes": 3657,
+      "sha256": "b6d9fab62863718d4a4cb23d3fe7b8fce9b85a6947cbae65fb39f330e4364623"
     },
     {
       "path": "experiments/spaces/city.js",
-      "bytes": 2439,
-      "sha256": "624af46bcca6a8f0b4740412db9073fbe7b248c2cd081021dbf70e97681cbd09"
+      "bytes": 63,
+      "sha256": "c2c0ac9ac8abe76f80165a5fa378dfd3403afe44eacbdefea3f2d457e1b84641"
     },
     {
       "path": "experiments/spaces/kit.js",
@@ -217,14 +222,139 @@
       "sha256": "a2cdc61ce09c6008bf4781cc9379bc1697d003ce5612a5e270f1b6bce07272b1"
     },
     {
+      "path": "seoul-study/audio-play.html",
+      "bytes": 9848,
+      "sha256": "e520a6c90d983a55d5d21ab02f858f055bd64bb90051630cb9ee6ef1f6485d2a"
+    },
+    {
+      "path": "seoul-study/audio-tests.html",
+      "bytes": 1221,
+      "sha256": "c78a018f31dc8f2cec04f831b96e243c31f473423e83b0808f8e0fe7da0595d9"
+    },
+    {
+      "path": "seoul-study/audio-tests.js",
+      "bytes": 5578,
+      "sha256": "82cc43bc1565a50d6ad67e9ce217953d994d59642e7b8859f35221573107d920"
+    },
+    {
+      "path": "seoul-study/audio.js",
+      "bytes": 7752,
+      "sha256": "da9553626d049df0cbfd6a3b0e8b3d1984f3422958002ef3bce2d7243cabaa65"
+    },
+    {
+      "path": "seoul-study/audio/SOURCES.txt",
+      "bytes": 582,
+      "sha256": "af17d8c369f99e9cf2f8e50553d2929449e918c8495df6f491581dad8a27c092"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-city-traffic-background-ambience-2930.wav",
+      "bytes": 11853176,
+      "sha256": "ae0d4c7c6a1a2d40361ae345348c5106931cdf3fceb8f23e3b6c2b93eaea2b24"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-completion-of-a-level-2063.wav",
+      "bytes": 528246,
+      "sha256": "f31efc9f074b1da87f9b73bad81800bb4ea2979d132bc217c13f9558833e1ed0"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-correct-answer-tone-2870.wav",
+      "bytes": 345970,
+      "sha256": "084b78463e30dae4aac5edbf9e9c93cdee5ece4a4a688352e6a2b6686f9b1f4a"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-fairy-arcade-sparkle-866.wav",
+      "bytes": 264132,
+      "sha256": "429c4d316d6269a8b66e97698d560f0fde01fb48dbd5ab794208ec5215e897f6"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-knocking-on-a-thick-wooden-door-197.wav",
+      "bytes": 203474,
+      "sha256": "705eb1407d996fe20c267f27b14ac51317a74a28d0e00121a96b4169cc48a554"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-passing-car-and-urban-ambience-1554.wav",
+      "bytes": 2473696,
+      "sha256": "8eb0e3aa4e3a990bd5280b3309fcfac8c549f633caae165f52f7684316b83493"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-small-hit-in-a-game-2072.wav",
+      "bytes": 195632,
+      "sha256": "2da77832ddcce963fd18607c1be61f0f0439533c230efafa4f8803eaebee5afa"
+    },
+    {
+      "path": "seoul-study/audio/mixkit-wrong-answer-fail-notification-946.wav",
+      "bytes": 344000,
+      "sha256": "830b2019b21f9532d1cf2bf3ebb93919c24d92b92a2aa22d231393a4b8ffb472"
+    },
+    {
+      "path": "seoul-study/audio/soulprodmusic-night-city-143869.mp3",
+      "bytes": 5722697,
+      "sha256": "bd79e4ac7fdf5ddf4f1bfa943139b102745d8cf2970c0903fa262918d3cdbb0b"
+    },
+    {
+      "path": "seoul-study/boot.js",
+      "bytes": 1175,
+      "sha256": "7907a87c3d3e6e7fb96e8ac62a750bade786f7742e02df5aa3677b591d7eeba5"
+    },
+    {
+      "path": "seoul-study/campaign.json",
+      "bytes": 154,
+      "sha256": "683322f455668a7b3fede86e9d9a9c042bb7f41f10a6cd1f668feee9b8c131ca"
+    },
+    {
+      "path": "seoul-study/car.js",
+      "bytes": 6098,
+      "sha256": "fbc67f16f8a6cb5f9f218d98a54dbca4b72f4f3d8bfd6ddf42a4069a73bf124a"
+    },
+    {
+      "path": "seoul-study/contact.js",
+      "bytes": 432,
+      "sha256": "cdbade9490d17501f5d9d012464c91c15e522a8bd4c4bce7d39d6c90e61d47a9"
+    },
+    {
+      "path": "seoul-study/door.css",
+      "bytes": 2899,
+      "sha256": "ed194d1525e88a140a27ba38e6bf998e01b6dcc783716ab1280d69cccea6fd0b"
+    },
+    {
+      "path": "seoul-study/hit-return.js",
+      "bytes": 676,
+      "sha256": "69e27abb4796322dbff72cc9a051be2879cb19918fc87708086f980d413549d5"
+    },
+    {
+      "path": "seoul-study/play.html",
+      "bytes": 9629,
+      "sha256": "698214cc483672bbec663d9cd023cf32826f21a0213bca99868f6854c8f49142"
+    },
+    {
+      "path": "seoul-study/space.js",
+      "bytes": 9973,
+      "sha256": "67b110bf8519d76d82d25abaab049c8d3bb2e71c759376204ba5a6116b73b778"
+    },
+    {
+      "path": "seoul-study/tests.html",
+      "bytes": 1040,
+      "sha256": "98ae35de5e6a9417e977a51d1d5642964357f2289bfff6102986164b8dfe3775"
+    },
+    {
+      "path": "seoul-study/tests.js",
+      "bytes": 19300,
+      "sha256": "0eb17b953e894e4c7d1a58d6710cec9dd4ce020d9f72cb02410cb5e35c62e22c"
+    },
+    {
+      "path": "seoul-study/traffic.js",
+      "bytes": 2353,
+      "sha256": "955cf429fcd8fc5708bfe04a5f896f7c839141028a82589b0a8c5921eb7894ba"
+    },
+    {
       "path": "src/LICENSES.txt",
       "bytes": 299,
       "sha256": "8c6e4d7899608210b8311ef0eddca7bbcc85721f657ae91789131143ab1a68e6"
     },
     {
       "path": "src/audio.js",
-      "bytes": 1730,
-      "sha256": "1712a3109dd4d0415a581a2fb3cb38358ead2c08c01d7dd07b2548fcffaee16f"
+      "bytes": 2667,
+      "sha256": "aeb5ecdf09c69a31ab0b50e3b058c660ac7cd8a90ae480d5b2bb0eb027218359"
     },
     {
       "path": "src/content/registry.js",
@@ -293,8 +423,8 @@
     },
     {
       "path": "src/runtime.js",
-      "bytes": 33453,
-      "sha256": "ade74d00377dde5c16e0549ea96be636e55159f714490edf3caa18d5650cd164"
+      "bytes": 33494,
+      "sha256": "0bb02e92c57eeb3d0a87e5bd3aca1d14495b28e728e64704668ab4590028acb7"
     },
     {
       "path": "src/spaces/legacy-room.js",
@@ -303,8 +433,8 @@
     },
     {
       "path": "src/style.css",
-      "bytes": 14678,
-      "sha256": "7cf7164528b13acceabedf13026ce914facfa7c17f3881a6c83007bddc1e0e14"
+      "bytes": 15166,
+      "sha256": "d15ecfac34da62209d149b2749c87302dba95392270ffcd37ff640030b319804"
     },
     {
       "path": "src/systems/appearances.js",
@@ -313,8 +443,8 @@
     },
     {
       "path": "src/systems/browser-compat.js",
-      "bytes": 3975,
-      "sha256": "2d99015c3381c24c95f42fe302063b44bb6bd7e53aae084e248e439c2971fc0b"
+      "bytes": 4942,
+      "sha256": "ba2163a944fe46e7023a0539e2fc148f27671b06a7391880c91cacf8391b6e37"
     },
     {
       "path": "src/systems/camera.js",
@@ -418,8 +548,8 @@
     },
     {
       "path": "street-study/audio-routing.js",
-      "bytes": 2260,
-      "sha256": "84e5a1287c59f898d81c1fac1d44ba4bcbb039c1e10e95d743a6a792d026e6aa"
+      "bytes": 3881,
+      "sha256": "1f629ec67793620feb5bc60b775e5ec21f4d2de55216bcf0a722fa0ed3220cad"
     },
     {
       "path": "street-study/audio.js",
@@ -495,6 +625,71 @@
       "path": "street-study/traffic-state.js",
       "bytes": 7255,
       "sha256": "5efbc4dc690d50aa3c57d98838474743b777361256f6d7f4754ab7507a4b57d6"
+    },
+    {
+      "path": "tests/integration/0.json",
+      "bytes": 89,
+      "sha256": "f3fce74689ca0bbf7eb8ad2472a01eb542aceefaab108c9f015715d45176d866"
+    },
+    {
+      "path": "tests/integration/1.json",
+      "bytes": 91,
+      "sha256": "8be630f14e03553d5f6c3b243b1f1e5f17d392a6d69db6156dec0573633b8428"
+    },
+    {
+      "path": "tests/integration/2.json",
+      "bytes": 89,
+      "sha256": "89c82f1c9bb1bab9d486d526aa4451fc3df7c5b1a1a80003d20d0112899db771"
+    },
+    {
+      "path": "tests/integration/3.json",
+      "bytes": 90,
+      "sha256": "a3f1f08fc7aab3141e59fbe938c39cd8aedfdf7dcb86c326f1f7b5d059af7929"
+    },
+    {
+      "path": "tests/integration/4.json",
+      "bytes": 90,
+      "sha256": "4cd770424788ac5f437f3e658a15b73ad5b821f09f8a8bb831aad813b746bb73"
+    },
+    {
+      "path": "tests/integration/5.json",
+      "bytes": 89,
+      "sha256": "074c321e5b6745fad021776260a325527ab7e7a917d2937c5a0ae3df4e4fe376"
+    },
+    {
+      "path": "tests/integration/all.json",
+      "bytes": 268,
+      "sha256": "dfc2cd0678df73a4bcdd8f1818a31d1d3bfff1b5f79cea8cbd2d125113955d6e"
+    },
+    {
+      "path": "tests/integration/boot.js",
+      "bytes": 2822,
+      "sha256": "e01129d7498536f25dd42e7bdc95c478347f65967d36d5bf5beb79f4cc8e2e08"
+    },
+    {
+      "path": "tests/integration/browser.html",
+      "bytes": 593,
+      "sha256": "8027e4aab93cbad21d2f54e9a7ee40eaf98121fad9b63d1a702803aa5aafdfb6"
+    },
+    {
+      "path": "tests/integration/browser.js",
+      "bytes": 9773,
+      "sha256": "f7b3079540ea702b93d225802ac1b894244c4d6f78532dd35fe74c9c0aa6dade"
+    },
+    {
+      "path": "tests/integration/menu.html",
+      "bytes": 270,
+      "sha256": "5e1025ff8a6540f1d97832ba271e3275037d213a8a05b29d7846f35fe2ba2f68"
+    },
+    {
+      "path": "tests/integration/menu.js",
+      "bytes": 2015,
+      "sha256": "d9ee17b49ff9e50979d98cb4070b989d24d68fe1b338323bb9943141e3c763af"
+    },
+    {
+      "path": "tests/integration/play.html",
+      "bytes": 9638,
+      "sha256": "a254e83c1778e3639886b6469d8c2f93a3f272870d37924b8cbc32bbd65e9d80"
     },
     {
       "path": "warehouse-study/architecture.js",
@@ -626,5 +821,6 @@
       "bytes": 696,
       "sha256": "f12f842f18b19d21d3a2629d76dbc70ab11a8487d6a21d2f308b3508942521f7"
     }
-  ]
+  ],
+  "releasePath": "releases/integrated-20261011-sound-touch/"
 }
