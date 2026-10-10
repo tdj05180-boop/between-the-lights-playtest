@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "train",
+  "title": "서울로 가는 길",
+  "sceneId": "life-train",
+  "appearanceId": "era-office",
+  "spawn": {
+    "x": -1.3,
+    "z": 1
+  },
+  "interactions": [
+    {
+      "id": "train-exit",
+      "x": -1.3,
+      "z": 1,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "서울 도착",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "train-exit",
+      "type": "exit",
+      "title": "창밖을 바라보며",
+      "description": "연출이 끝나면 다음 공간으로 이어집니다.",
+      "targets": [
+        "train-exit"
+      ],
+      "goal": {
+        "event": "arrive",
+        "count": 1
+      }
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "서울로 향하는 길 · 상징적 이동 장면",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "2019년, 사업은 다시 어려움을 맞았다.",
+          "durationMs": 4000
+        },
+        {
+          "text": "그는 서울로 향했다.",
+          "durationMs": 5000
+        },
+        {
+          "text": "낯선 도시에서, 또 한 번의 시작.",
+          "durationMs": 6000
+        }
+      ],
+      "camera": {
+        "preset": "fixed",
+        "target": {
+          "x": 0,
+          "y": 1.3,
+          "z": -1.2
+        }
+      },
+      "cinematic": true
+    }
+  },
+  "opening": "opening"
+}
