@@ -1,3 +1,5 @@
+import {createFoodCargo} from './food-cargo.js';
+import {createBackgroundWorkers} from './background-workers.js';
 import {createInbound} from './inbound.js';
 import {canStandCarrying} from './reach.js';
 import {workflow} from './workflow-layout.js';
@@ -16,6 +18,7 @@ export const layout={
 };
 export function createWarehouseStudy(ctx){
  const {renderer,camera,player}=ctx,scene=new T.Scene();scene.fog=new T.Fog(0xe7ecdf,80,205);const sky=installSky(scene);const world=new T.Group();scene.add(world);const k=workshop(world),obstacles=[],dynamic=new Set();
+ k.foodCargo=createFoodCargo(k);
  const previousFar=camera.far;camera.far=240;camera.updateProjectionMatrix();
  const block=(x,z,w,d,h=2.3)=>obstacles.push({x,z,w,d,h});
  // The traversable floor is a small part of a continuing industrial campus.
@@ -40,7 +43,7 @@ export function createWarehouseStudy(ctx){
  k.box(1.28,.28,.10,P.line,10.5,1.17,-10.95);
  for(const x of [9.86,11.14])k.box(.08,.65,.13,P.frame,x,.95,-10.95);
  k.stripe(10.5,-12.1,1.5,.09,P.line);
- for(const [x,z] of [[2,-12],[19,-10]]){pallet(k,x,z,{stack:2,color:x<10?P.blue:P.red});block(x,z,1.3,1.15,1.5);for(const dx of [-1,1])k.stripe(x+dx,z,.07,2.7);k.stripe(x,z+1.3,2.1,.07);}
+ for(const [x,z] of [[2,-12],[19,-10]]){pallet(k,x,z);block(x,z,1.3,1.15,1.5);for(const dx of [-1,1])k.stripe(x+dx,z,.07,2.7);k.stripe(x,z+1.3,2.1,.07);}
  for(const [x,z] of [[-18.5,10],[-18.5,11.3],[-11.2,10]]){pallet(k,x,z);block(x,z,1.3,1.1,.55);}
  // Forklift staging is beside the storage aisle, separated from the outbound pedestrian loop.
  forklift(k,-7,1);block(-7,.6,3.2,3.5,2.9);pallet(k,-7,-2.5,{stack:2});block(-7,-2.5,1.3,1.1);
@@ -48,7 +51,7 @@ export function createWarehouseStudy(ctx){
  for(const [x,z] of [[1,-13],[3,-13],[18,-11.4],[20,-11.4]]){k.cyl(.065,.95,P.line,x,.59,z);block(x,z,.16,.16,1.1);}
  // Same parcel dimensions/colors. Each parcel now has an independent full-route state.
  const crateRoot=new T.Group();world.add(crateRoot);dynamic.add(crateRoot);
- const boxes=Array.from({length:10},(_,i)=>{const model=k.group(0,0,0,crateRoot);k.box(.5,.43,.42,i%2?P.red:P.blue,0,0,0,model,.025);k.box(.07,.014,.44,P.wallLight,0,.221,0,model);k.box(.17,.1,.014,P.wallLight,0,0,.217,model);model.visible=false;return {id:i,color:i%2?'red':'blue',model,body:model.children[0]};});
+ const boxes=Array.from({length:10},(_,i)=>k.foodCargo.playable(i,i%2?'red':'blue',crateRoot));
  const inbound=createInbound(k,crateRoot,boxes);dynamic.add(inbound.object);
  const features={inbound,pickup:{...workflow.pickup},trucks:workflow.trucks.map(t=>({...t})),boxes,crateRoot};
  // Workbench adjacent to infeed, with scanner/scale: a human-scale task station.
@@ -57,7 +60,9 @@ export function createWarehouseStudy(ctx){
  for(const x of [-16.6,-13.4])k.stripe(x,10,.07,10.4);for(const z of [10.6,13.3])k.stripe(-4,z,19,.075);for(const x of [11.4,14])k.stripe(x,2,.075,18);k.arrow(-15,12);k.arrow(-9,12,Math.PI/2);k.arrow(6,12,Math.PI/2);k.arrow(12.7,3);k.arrow(12.7,-3);
  const office=buildOffice(k,block);
  // Simple packing cart and safety equipment beside the existing workbench.
- k.box(.8,.07,1.15,P.steel,-9, .46,8.4);for(const dx of [-.32,.32])for(const dz of [-.46,.46]){const wheel=k.cyl(.1,.06,P.dark,-9+dx,.25,8.4+dz);wheel.rotation.z=Math.PI/2;}for(const dx of [-.36,.36])k.box(.04,.7,.04,P.frame,-9+dx,.81,8.9);k.box(.76,.045,.04,P.frame,-9,1.16,8.9);block(-9,8.4,.9,1.25,1.2);
+ const backgroundWorkers=createBackgroundWorkers(k,world,player.avatar,obstacles);dynamic.add(backgroundWorkers.object);
+ block(-9,8.4,.9,1.25,1.2); // retain the original cart's reserved footprint
+
  for(const x of [-20.9,20.9]){k.cyl(.1,.48,P.red,x,.7,15.4);k.box(.05,.13,.05,P.dark,x,.99,15.4);k.box(.25,.3,.03,P.red,x,1.65,15.4);}
  for(const d of workflow.docks)truck(k,d.x,-19.1,d.color==='blue'?P.blue:d.color==='red'?P.red:P.green,{open:false,foldDoors:d.color==='inbound'});
  for(const x of [-6.5,-1.5,3.5,8.5,12.5,17.5])k.box(.09,.01,16,P.line,x,-1.045,-25,world,.001).castShadow=false;
@@ -66,6 +71,7 @@ export function createWarehouseStudy(ctx){
 
  const hemi=new T.HemisphereLight(0xf4f1e5,0x889b91,1.75),sun=new T.DirectionalLight(0xffedcf,2.25);sun.position.set(-24,38,25);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-35,right:35,top:36,bottom:-36,near:1,far:110});sun.shadow.normalBias=.025;sun.shadow.bias=-.0002;const indoorFill=new T.DirectionalLight(0xf8efd9,.65);indoorFill.position.set(0,8,4);scene.add(hemi,sun,indoorFill);renderer.toneMappingExposure=1.02;
  const contactShadows=addContactLighting(world,obstacles);dynamic.add(contactShadows);
+ const stockRoot=k.foodCargo.flush(world);dynamic.add(stockRoot);
  const before=modelMetrics(world),batch=k.batch(world,dynamic,10);const after=modelMetrics(world);world.add(player.avatar,player.avatarShadow);
  const ray=new T.Ray(),direction=new T.Vector3(),hit=new T.Vector3();
  // Static shell remains visible. Camera contracts against real wall openings and the pitched roof.
@@ -73,7 +79,7 @@ export function createWarehouseStudy(ctx){
  const height=o.h;
  return new T.Box3(new T.Vector3(o.x-o.w/2,.11,o.z-o.d/2),new T.Vector3(o.x+o.w/2,height,o.z+o.d/2));
  })).map(b=>b.expandByScalar(.22));
- const view={renderer,camera,scene,world,...player,layout,obstacles,features,office,speedScale:1,carrying:false,metrics:{before,after,batch,architecture:{eaves:architecture.eaves,ridge:architecture.ridge,windows:architecture.windows.length},shadowMap:2048,signAtlasBytes:2048*1024*4*4/3},
+ const view={renderer,camera,scene,world,...player,layout,obstacles,features,office,backgroundWorkers,speedScale:1,carrying:false,metrics:{before,after,batch,architecture:{eaves:architecture.eaves,ridge:architecture.ridge,windows:architecture.windows.length},shadowMap:2048,signAtlasBytes:2048*1024*4*4/3},
  canCarryAt(x,z){return canStandCarrying(x,z,this.avatar.rotation.y,obstacles);},
  canWalk(x,z,r=.26){if(this.carrying)return this.canCarryAt(x,z);return x>-21.6+r&&x<21.6-r&&z>-15.2+r&&z<16.2-r&&!obstacles.some(o=>Math.abs(x-o.x)<o.w/2+r&&Math.abs(z-o.z)<o.d/2+r);},
  cameraTarget(avatar,rig){return rig.target??{x:avatar.position.x,y:rig.height??1.4,z:avatar.position.z};},
@@ -87,8 +93,9 @@ export function createWarehouseStudy(ctx){
  },
  resolveCamera(camera,target){this.resolveSolidCamera(camera,target);},
  updatePlayerHeight(){player.avatar.position.y=.11;player.avatarShadow.position.set(player.avatar.position.x,.116,player.avatar.position.z);},
- updateAmbient({activeMs=0}={}){
+ updateAmbient({activeMs=0,playing=false}={}){
  const dt=Math.max(0,activeMs-(this.rollerTime??activeMs))/1000;this.rollerTime=activeMs;
+ backgroundWorkers.update(playing?dt:0);
  for(let j=0;j<belts.length;j++){const belt=belts[j],spec=j<3?workflow.belts[j]:{x:-4,z:-16.7,length:1.4,rotation:0},direction=j===2?1:-1;
  const m=new T.Matrix4();belt.phases??=new Float64Array(belt.rollers.count);
  for(let i=0;i<belt.rollers.count;i++){

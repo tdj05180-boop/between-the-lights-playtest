@@ -21,7 +21,7 @@ export function createInbound(k,crateRoot,boxes){
   set(upper,a,elbow);set(lower,lower.getWorldPosition(new T.Vector3()),target);
  }}
  function reset(){
-  manifest=makeInboundManifest();order=manifest.boxes.map((b,i)=>{const item=boxes.find(x=>x.id===b.id);item.color=b.color;item.body.material=k.mat(b.color==='red'?P.red:P.blue);crateRoot.add(item.model);item.model.visible=true;item.model.rotation.set(0,0,0);item.model.position.copy(inboundSlot(i));return item;});
+  manifest=makeInboundManifest();order=manifest.boxes.map((b,i)=>{const item=boxes.find(x=>x.id===b.id);item.setColor(b.color);crateRoot.add(item.model);item.model.visible=true;item.model.rotation.set(0,0,0);item.model.position.copy(inboundSlot(i));return item;});
   boxes.splice(0,boxes.length,...order);last={...rest};object.position.set(rest.x,rest.y,rest.z);object.rotation.y=Math.PI;adapter.update({dt:1/60});status={stage:'ready',truck:10,workerId:null,manifest};return manifest;
  }
  function update(queue,dt){

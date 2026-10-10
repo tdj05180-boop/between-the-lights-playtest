@@ -12,7 +12,7 @@ export const warehouseSorting={input:{movement:false,camera:false,interaction:tr
  const ui=panel(ctx,'sorting','유통 · 색상 분류','입고 → 컨베이어 → 회수 → 같은 색 트럭',{world:true});
  ui.el.classList.add('conveyor-status');
  function targets(){
-  const list=held.length<2?queue.snapshot().filter(b=>['moving','waiting'].includes(b.state)).map(b=>({id:`box-${b.id}`,boxId:b.id,x:b.x,z:b.z,yaw:b.yaw,name:`${b.color==='blue'?'파란':'빨간'} 택배 상자`,action:'줍기',highlightY:1.064,outline:{y:b.y,width:.55,height:.48,depth:.47}})):[];
+  const list=held.length<2?queue.snapshot().filter(b=>['moving','waiting'].includes(b.state)).map(b=>({id:`box-${b.id}`,boxId:b.id,x:b.x,z:b.z,yaw:b.yaw,name:`${b.color==='blue'?'파란 쌀 포대':'빨간 식자재 상자'}`,action:'줍기',highlightY:1.064,outline:{y:b.y,width:.55,height:.48,depth:.47}})):[];
   if(held.length&&!loaded.some(l=>l.state==='loading'))list.push(...f.trucks.filter(t=>t.color===held.at(-1).color).map(t=>({...t,id:`truck-${t.color}`,facingZ:t.z-3,name:`${t.color==='blue'?'파란':'빨간'} 트럭`,action:'싣기',highlightScale:1.6})));
   return list.map(t=>t.boxId!==undefined?parcelRegion(avatar.position,t):truckRegion(avatar.position,t)).filter(t=>canReach(avatar.position,t,view.obstacles));
  }
