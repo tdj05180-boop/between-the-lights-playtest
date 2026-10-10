@@ -36,8 +36,10 @@ function carModel(color,estate=false){
  }
  panel([[.49,1.495,-.68],[.49,1.495,.68],[1.00,1.04,.71],[1.00,1.04,-.71]],glass);
  for(const side of [-1,1])bar([1.008,1.047,side*.10],[.97,1.083,side*.54],.009,trim);
- const backTop=estate?-1.11:-.73,backBottom=estate?-1.67:-1.29;
- panel([[backTop-.055,1.50,.66],[backTop-.055,1.50,-.66],[backBottom-.06,1.07,-.7],[backBottom-.06,1.07,.7]],glass);
+ // Follow the actual rear body slope, outside its 45 mm bevel, including the upper edge.
+ const rearRoofX=estate?-1.10:-.72,rearBaseX=estate?-1.68:-1.30;
+ const rearGlassX=y=>rearRoofX+(1.54-y)/.54*(rearBaseX-rearRoofX)-.075;
+ panel([[rearGlassX(1.50),1.50,.66],[rearGlassX(1.50),1.50,-.66],[rearGlassX(1.07),1.07,-.7],[rearGlassX(1.07),1.07,.7]],glass);
  for(const end of [-1,1]){box(.07,.13,1.45,trim,end*2,.51,0);box(.025,.13,.40,cream,end*2.045,.69,0);for(const z of [-.55,.55])box(.055,.16,.31,end>0?0xf0e5b8:0xae716c,end*1.995,.80,z,root,.03);}
  for(let i=0;i<4;i++)box(.05,.018,.51,trim,2.03,.64+i*.045,0);
  batchStatic(root,new Set(wheels));
@@ -113,7 +115,13 @@ export function addRoadDetails(world){
    const m=material(0x303e37,{emissive:c,emissiveIntensity:0,roughness:.7});const disc=mesh(root,new T.CylinderGeometry(.125,.125,.035,12),m,-.41+i*.41,0,.15);disc.rotation.x=Math.PI/2;disc.castShadow=false;lights.push({m,axis,index:i,color:c});
    box(.29,.045,.18,dark,-.41+i*.41,.17,.18,root);
   }
-  const sign=mesh(root,new T.PlaneGeometry(.72,.90),signMat,0,-.77,.02);sign.castShadow=false;
+  // Mount beside the signal on its existing horizontal arm, toward the supporting pole.
+  const signX=axis==='main'?-1.16:1.16,signY=.26;
+  bar([signX,signY-.22,0],[signX,signY+.22,0],.028,dark,root);
+  for(const y of [signY-.15,signY+.15])box(.13,.055,.10,dark,signX,y,.025,root,.008).castShadow=false;
+  // Retain the blue rear face and the original front artwork, size and orientation.
+  box(.72,.90,.022,0x0845db,signX,signY,.075,root,.006).castShadow=false;
+  const sign=mesh(root,new T.PlaneGeometry(.72,.90),signMat,signX,signY,.09);sign.castShadow=false;
  }
  for(const x of ROAD.junctions){
   for(const side of [-1,1]){
