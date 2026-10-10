@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "distribution",
+  "title": "유통 · 다시 움직이는 하루",
+  "sceneId": "warehouse-workflow",
+  "appearanceId": "era-distribution",
+  "quests": [
+    {
+      "id": "sorting",
+      "type": "minigame",
+      "title": "열 개의 상자",
+      "description": "빛나는 표시 가까이에서 행동으로 시작하세요.",
+      "targets": [
+        "sorting"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "warehouse-sorting",
+      "config": {
+        "count": 10,
+        "releaseMs": 4500,
+        "limitMs": 150000
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "sorting",
+      "after": "done"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "확인된 전환 · 유통업",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "유통업을 하며 형편이 나아졌습니다.",
+          "durationMs": 4500
+        },
+        {
+          "text": "이 분류 작업은 이를 표현한 상징적 게임이며 실제 업무의 재현이 아닙니다.",
+          "durationMs": 4500
+        }
+      ]
+    },
+    "done": {
+      "speaker": "다음 시간으로",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "하나씩 옮긴 상자가 모였습니다. 다음 시간으로 나아갑니다.",
+          "durationMs": 4500
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}
