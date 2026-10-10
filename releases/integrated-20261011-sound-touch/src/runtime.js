@@ -14,7 +14,7 @@ import {MovementController} from './systems/movement.js';
 import {InteractionRegistry} from './systems/interactions.js';
 import {JumpController} from './systems/jump.js';
 import {CameraRig} from './systems/camera.js';
-import {capturePointer,releasePointer,inside,guardGameGestures,guardGameUI,bindTouchAction,bindFullscreen,visibleGameViewport} from './systems/browser-compat.js';
+import {capturePointer,releasePointer,inside,guardGameGestures,guardGameUI,bindTouchAction,bindFullscreen,visibleGameViewport} from './systems/browser-compat.js?v=webapp-20261011';
 
 let booted=false;
 export async function startGame({campaignUrl=new URL('./data/campaign.json',import.meta.url),session={},cameraRig=null,audioFactory=createAudio}={}){
