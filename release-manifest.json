@@ -1,5 +1,5 @@
 {
-  "version": "integrated-20261010-rice-sacks",
+  "version": "integrated-20261010-office-audio",
   "files": [
     {
       "path": ".nojekyll",
@@ -23,8 +23,8 @@
     },
     {
       "path": "experiments/data/2019.json",
-      "bytes": 1739,
-      "sha256": "14171247cdfd9ccfc6e4a071036f01ae385309d994d6ddc510451cd27eaa9dcf"
+      "bytes": 1799,
+      "sha256": "8826e34640b62a6742d64a137bed13b0e5194437ced41e88cb355ac784813582"
     },
     {
       "path": "experiments/data/2026.json",
@@ -68,8 +68,8 @@
     },
     {
       "path": "experiments/minigames/office.js",
-      "bytes": 1763,
-      "sha256": "e5295454ad6477ed37d186fb4672982a6feea874f3684b837299ad81c856576a"
+      "bytes": 5182,
+      "sha256": "8e9ea09125b19f467d4f9005cb5635a9f6b179f1ce43b159fd36b70ffa750f3f"
     },
     {
       "path": "experiments/minigames/shutter.js",
@@ -103,8 +103,8 @@
     },
     {
       "path": "experiments/spaces/office.js",
-      "bytes": 1416,
-      "sha256": "671863e0f8173f84fba2eb70282817c4027518c9f3260f4aefebdaecbb5fd6d0"
+      "bytes": 1501,
+      "sha256": "2cd8f510e250e90ed9e5097e95d71e47b4f5f9597d4171a6bd422c9229d6914d"
     },
     {
       "path": "experiments/spaces/street.js",
@@ -135,6 +135,86 @@
       "path": "index.html",
       "bytes": 328,
       "sha256": "f7584de3dff7902c53ea6a62011bbd9550d1f4d9a32dd630fb7770fc348a9cb7"
+    },
+    {
+      "path": "office-study/audio-play.html",
+      "bytes": 9820,
+      "sha256": "bc69fed9b80b5ad234fad31e9ee559a4b2a0526177325e5757c95331056d3914"
+    },
+    {
+      "path": "office-study/audio-tests.js",
+      "bytes": 4654,
+      "sha256": "d409fc826b9f7c020dd44129ce4eb058e795b01075af10e365c9a25a81fc5ed6"
+    },
+    {
+      "path": "office-study/audio.js",
+      "bytes": 7213,
+      "sha256": "ed4b4a8b776fc8165b651101816dbf5032497b86ffff8f4d08e06b183c8f6331"
+    },
+    {
+      "path": "office-study/audio/SOURCES.txt",
+      "bytes": 469,
+      "sha256": "edf0d91858c9df4082a58462612ca00903d3132f48ec2c0830163bd3e4212185"
+    },
+    {
+      "path": "office-study/audio/mixkit-creaky-door-open-195.wav",
+      "bytes": 708944,
+      "sha256": "7ce4a2dc95f38ea8f2edb897236545695aaf8deb322f53a2e6a1f8a4ad3af14c"
+    },
+    {
+      "path": "office-study/audio/mixkit-paper-slide-1530.wav",
+      "bytes": 193072,
+      "sha256": "2e945267f56208884153867d062838888e6bddc92b512e130aa9566255ad36bb"
+    },
+    {
+      "path": "office-study/audio/mixkit-small-electric-glitch-2595.wav",
+      "bytes": 180480,
+      "sha256": "a0b1fc7da700d4ee99294b242039836717a9e9e2c53ffa308b72dda7c22a7578"
+    },
+    {
+      "path": "office-study/audio/mixkit-unlock-game-notification-253.wav",
+      "bytes": 247230,
+      "sha256": "60ab6e9b549da2e874a636b918d9e17a96bf3bddce23c68ef48c936930fbe77f"
+    },
+    {
+      "path": "office-study/audio/ovrsoull-deep-bass-cinematic-tension-forensic-noir-investigative-pulse-454724.mp3",
+      "bytes": 4902144,
+      "sha256": "94991bc5f852840eb595780a48837bd9ab5987f3c512cb624a0657c711ed5f7c"
+    },
+    {
+      "path": "office-study/boot.js",
+      "bytes": 1180,
+      "sha256": "f2eac92f2d0c3885054d9076979015c275ba11b521d745e004bda732adf980ed"
+    },
+    {
+      "path": "office-study/campaign.json",
+      "bytes": 191,
+      "sha256": "92c7453881305999a4c477625374d0be6bffcfe8ba5e6b68d9660cd62aaba81d"
+    },
+    {
+      "path": "office-study/layout.js",
+      "bytes": 2383,
+      "sha256": "9f4849b9ab608ca3a0ba8df8a686b0b8377e7bcffa91d259e651bdabc9a25abb"
+    },
+    {
+      "path": "office-study/play.html",
+      "bytes": 9630,
+      "sha256": "03cae7eb899d76b7c455b45aa2aa2e2c737e0575301f9a175da762b1dd73a0a8"
+    },
+    {
+      "path": "office-study/space.js",
+      "bytes": 7601,
+      "sha256": "4b04dbc520967f9a027ba00dd57a0051644afd7e149f245a3620b14f01f2ef8a"
+    },
+    {
+      "path": "office-study/tests.html",
+      "bytes": 670,
+      "sha256": "5e40d0ac93216534a95d39d25662328341bddc01ecd61bc6a5395cae704e4c0b"
+    },
+    {
+      "path": "office-study/tests.js",
+      "bytes": 13672,
+      "sha256": "a2cdc61ce09c6008bf4781cc9379bc1697d003ce5612a5e270f1b6bce07272b1"
     },
     {
       "path": "src/LICENSES.txt",
@@ -268,8 +348,8 @@
     },
     {
       "path": "src/systems/minigames.js",
-      "bytes": 3704,
-      "sha256": "4bf6d8faefa249b66e4796a0826cbf6d406616d5f368d40a3c3d67063608e1b4"
+      "bytes": 3944,
+      "sha256": "cc5dc097b709748f44b86688d6d6e6e9d6dde8b4181dd9b0e0bf7d7779239f48"
     },
     {
       "path": "src/systems/model-slot.js",
@@ -338,8 +418,8 @@
     },
     {
       "path": "street-study/audio-routing.js",
-      "bytes": 1918,
-      "sha256": "f9707b448451bf3ee10225584ef8bb386d33e88aad18a87d3cf1dd691f39ba35"
+      "bytes": 2260,
+      "sha256": "84e5a1287c59f898d81c1fac1d44ba4bcbb039c1e10e95d743a6a792d026e6aa"
     },
     {
       "path": "street-study/audio.js",
