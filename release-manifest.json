@@ -1,5 +1,5 @@
 {
-  "version": "integrated-20261010-rice-food",
+  "version": "integrated-20261010-rice-sacks",
   "files": [
     {
       "path": ".nojekyll",
@@ -498,8 +498,8 @@
     },
     {
       "path": "warehouse-study/food-cargo.js",
-      "bytes": 4583,
-      "sha256": "8412393bb93ca11a99e90463e028dd1a757314888a25beefa837d3a207f39c22"
+      "bytes": 7352,
+      "sha256": "49766b3cd5c5cd424b5a212777079904ac9e1bc315e107229ba02fbba69cadef"
     },
     {
       "path": "warehouse-study/geometry.js",
@@ -524,7 +524,7 @@
     {
       "path": "warehouse-study/props.js",
       "bytes": 6519,
-      "sha256": "ea787d9f23355bd453ea76a4fc63ff26ceafe4a68e85d5fe58d496c7abea049f"
+      "sha256": "ef8c0c9d9424d24754b88fef65a8634869de2d7d4e54ec7a51bddbc1d11cd095"
     },
     {
       "path": "warehouse-study/reach.js",
@@ -538,8 +538,8 @@
     },
     {
       "path": "warehouse-study/space.js",
-      "bytes": 10780,
-      "sha256": "8f80665648267b804d6767795ba9d5d31c00cce256a9deaef9e558a9287a5ea9"
+      "bytes": 10863,
+      "sha256": "d7b21bea475b020b0dc21321b87496bae189367221af23c29403e53fc90203c9"
     },
     {
       "path": "warehouse-study/workflow-layout.js",
