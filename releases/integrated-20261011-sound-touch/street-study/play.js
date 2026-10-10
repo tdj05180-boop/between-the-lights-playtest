@@ -1,4 +1,4 @@
-import '../experiments/register.js';
+import '../experiments/register.js?v=door-ready-20261011';
 import {spaces,minigames} from '../src/content/registry.js';
 import {startGame} from '../src/runtime.js?v=webapp-20261011';
 import {createSession} from '../experiments/scoring.js';
