@@ -1,0 +1,16 @@
+import {createSession} from '../../experiments/scoring.js';
+const config=await fetch('../../experiments/data/scores.json').then(r=>r.json()),key='between-lights:test-only:integration-'+performance.now(),checks=[];
+const check=(pass,name,detail)=>checks.push({pass:!!pass,name,detail});
+const old={total:6000,elapsedMs:1,version:'legacy-6000'};localStorage.setItem(key,JSON.stringify(old));
+const session=createSession(config,{full:true,storageKey:key}),m={shutter:{survivedMs:40000},sorting:{correct:10,elapsedMs:50000},office:{hits:0,elapsedMs:30000},seoul:{collected:3,doorHits:3,doorAttempts:3,hits:0,elapsedMs:20000},agency:{completed:5,efficiency:1,dispatchMs:45000,managementMs:10000,shortagePersonMs:0}};
+for(const [id,metrics]of Object.entries(m))session.onResult({status:'success',metrics},{scoreRound:id});check(session.onResult({status:'success',metrics:m.agency},{scoreRound:'agency'})===null,'동일 2026 결과 중복 집계 방지');
+session.onFinish({elapsedMs:123456,interrupted:false});check(window.experimentResult.total===5000&&window.experimentResult.percent===100,'전체5000점/100%');check(window.experimentResult.complete&&window.experimentResult.best.total===5000,'5파트 완주 최고기록 저장');check(localStorage.getItem(key)===JSON.stringify(old),'기존6000점 저장키 보존');
+check(JSON.parse(localStorage.getItem(key+':agency-v2-5000')).maxScore===5000,'5000점 별도버전 최고기록');
+session.onFinish({elapsedMs:130000,interrupted:false});check(window.experimentResult.best.elapsedMs===123456,'동점의 느린 기록은 최고기록 덮어쓰기 금지');
+session.onFinish({elapsedMs:120000,interrupted:false});check(window.experimentResult.best.elapsedMs===120000,'동점의 빠른 기록은 최고기록 갱신');
+session.onReset();check(session.scores.size===0&&!document.getElementById('roundResults'),'재시작 점수/결과 초기화');
+for(const [id,metrics]of Object.entries(m))session.onResult({status:'success',metrics},{scoreRound:id});session.onFinish({elapsedMs:120000,interrupted:false});
+document.getElementById('pauseOverlay').hidden=true;document.getElementById('agencyControl').hidden=true;document.getElementById('ending').hidden=false;
+const label=document.createElement('p');label.textContent='검증용 완주 데이터 · 실제 점수 계산/저장 함수로 5개 라운드 5,000점 확인';label.style.color='#876c42';document.getElementById('roundResults').prepend(label);
+const out=document.createElement('pre');out.id='scoreFixtureReport';out.hidden=true;out.textContent=JSON.stringify(checks);document.body.append(out);
+localStorage.removeItem(key);localStorage.removeItem(key+':agency-v2-5000');
