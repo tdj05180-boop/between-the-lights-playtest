@@ -17,3 +17,7 @@ The root URL and QR target are unchanged.
 
 ## 2026-10-12 FPS display
 Current full-story release: [integrated-20261012-fps](releases/integrated-20261012-fps/street-study/play.html?v=fps-20261012). Optional F3 / settings FPS meter, default OFF. Actual browser frame cadence and rolling 3-second average. Previous releases and the 5,000-point score system are preserved.
+
+
+## 2026-10-12 Latest integrated train release
+Full story: [integrated-20261012-train-final](releases/integrated-20261012-train-final/street-study/play.html?v=train-final-20261012). Includes reviewed 2003 background, FPS, 2019 office/Seoul street, 23-second train scenery/cabin/passengers and 2026 integrated control. Five rounds / 5,000 points. Previous releases preserved.

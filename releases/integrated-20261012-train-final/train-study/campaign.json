@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "mode": "presentation",
+  "chapters": [
+    "../experiments/data/train.json",
+    "../experiments/data/seoul.json",
+    "../experiments/data/2026.json"
+  ]
+}

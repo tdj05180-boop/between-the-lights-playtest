@@ -1,0 +1,7 @@
+Supplied locally by user in shutter-audio; originals preserved without edits.
+No web search or download used. Conversion details and source hashes: conversion.json.
+BGM: forget_me_not_in_f_major_looped.ogg
+Roller: 335364__nicola_ariutti__roller-shutter.wav
+Metal: 524695__brunoauzet__metal-shutter.wav
+Contact: 48980__lunardrive__metal-door-slam_soundsmith.wav
+License documents were not supplied in this folder; distribution license has not been independently verified in this local-only task. No publication performed.

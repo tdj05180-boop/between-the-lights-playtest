@@ -1,0 +1,13 @@
+import {press} from '../ui.js';
+import {ManagementState} from '../management-state.js';
+import {dashboard,bike,names} from '../../agency-study/ui.js';
+export function transfer(state,index,delta){if(delta===1&&state.pool>0){state.pool--;state.riders[index]++;return true;}if(delta===-1&&state.riders[index]>0){state.pool++;state.riders[index]--;return true;}return false;}
+export const management={input:{movement:true,camera:true,interaction:true},create(ctx,c){
+ const {view,scene}=ctx.world();view.features.focus.active=true;const state=new ManagementState(c);
+ const ui=dashboard(ctx,'management','권역 운영 · 10초 집중 대응','여유 권역에서 회수하고 부족 권역에 배치하세요. 2초마다 수요가 바뀝니다.');
+ const points=names.map((_,i)=>({x:i%2?76:24,y:i<2?25:75}));let lastFrom=null;
+ const cards=names.map((name,i)=>{const card=document.createElement('article');card.className='agency-region';card.style.left=points[i].x+'%';card.style.top=points[i].y+'%';card.innerHTML=`<h3><span class="staff-icon">${bike}</span> ${name}</h3><p></p><progress max="100" aria-label="업무 부담"></progress><div class="staff-actions"></div>`;
+ for(const delta of [-1,1]){const b=document.createElement('button');b.textContent=delta===1?'+ 배치':'− 회수';b.setAttribute('aria-label',name+(delta===1?' 인력 추가':' 인력 회수'));press(ctx,b,()=>{state.advance(ctx.elapsedMs());if(!transfer(state,i,delta)){ui.feedback.textContent=delta===1?'대기 인력이 없습니다. 여유 권역에서 먼저 회수하세요.':'이 권역에는 회수할 인력이 없습니다.';return;}if(delta<0){lastFrom=i;ui.feedback.textContent=`${name}에서 1명 회수 · 부족 권역에 배치하세요.`;}else{if(lastFrom!==null)ui.link(points[lastFrom],points[i]);lastFrom=null;ui.feedback.textContent=`${name}에 1명 배치 완료`;}render();});card.querySelector('div').append(b);}ui.map.append(card);return card;});
+ function render(){const demand=state.demand();for(let i=0;i<4;i++){const gap=state.riders[i]-demand[i];cards[i].querySelector('progress').value=state.loads[i];cards[i].querySelector('p').textContent=`현재 ${state.riders[i]} / 필요 ${demand[i]} · ${gap<0?'부족 '+(-gap):gap>0?'여유 '+gap:'충족'}`;cards[i].dataset.danger=String(gap<0);}ui.status.textContent=`남은 ${((c.durationMs-state.now)/1000).toFixed(1)}초 · 대기 ${state.pool}명 · 미해결 부족 ${state.risks}회`;}
+ render();return {...ui,update(){state.advance(ctx.elapsedMs());render();scene.userData.experiment={kind:'management',riders:[...state.riders],pool:state.pool,loads:[...state.loads],demand:[...state.demand()],remainingMs:c.durationMs-state.now,risks:state.risks,wave:Math.min(4,Math.floor(state.now/c.changeMs))};if(state.now>=c.durationMs)ctx.finish({status:'success',metrics:{risks:state.risks,elapsedMs:c.durationMs}});},dispose(){view.features.focus.active=false;delete scene.userData.experiment;}};
+}};
