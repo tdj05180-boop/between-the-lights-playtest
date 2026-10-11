@@ -1,0 +1,8 @@
+User-supplied audio; original files preserved in workspace train-audio.
+BGM: AlexGrohl - New Chapter (The Inspiring Hopeful Piano)
+alexgrohl-new-chapter-the-inspiring-hopeful-piano-460669.mp3: excerpt 0-17s, MP3 128kbps stereo 44.1kHz.
+Mixkit: Train passenger passing by rattle
+mixkit-train-passenger-passing-by-rattle-1636.wav: excerpt 0-17s, mono PCM16 32kHz.
+Mixkit: Train door close
+mixkit-train-door-close-1638.wav: supplied original 3.516s WAV.
+No new downloads. License terms were not independently reverified in this change; retain user acquisition records.

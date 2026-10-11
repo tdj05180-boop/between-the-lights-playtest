@@ -13,3 +13,7 @@ Current full-story release: [integrated-20261012-agency-audio-5000](releases/int
 Five scored rounds, 5,000 maximum; 2026 combines dispatch (500) and staffing (500).
 All previous releases remain intact. Audio credits/license links: [2026 sources](releases/integrated-20261012-agency-audio-5000/agency-study/audio/SOURCES.txt).
 The root URL and QR target are unchanged.
+
+
+## 2026-10-12 FPS display
+Current full-story release: [integrated-20261012-fps](releases/integrated-20261012-fps/street-study/play.html?v=fps-20261012). Optional F3 / settings FPS meter, default OFF. Actual browser frame cadence and rolling 3-second average. Previous releases and the 5,000-point score system are preserved.
