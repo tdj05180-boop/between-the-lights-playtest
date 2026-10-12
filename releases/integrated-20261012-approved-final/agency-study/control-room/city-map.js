@@ -1,0 +1,31 @@
+// Shared, deterministic vector city. No bitmap background or external map API.
+export function cityMap(){
+ let seed=26;const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};let buildings='',trees='';
+ const palette=[['#d8dacb','#acbbb7','#c9d0c7'],['#c5d2d1','#92abad','#b6c7c6'],['#e2d8c2','#b9b6a6','#d4cdbd'],['#cbd1c4','#9dacaa','#bac4b7']];
+ function building(x,y,w,h,tall){
+  const p=palette[Math.floor(rand()*palette.length)],dy=tall*.72,dx=tall*.27;
+  let b=`<path d="M${x} ${y+h}h${w}l${tall*.7} ${tall*.4}h-${w}z" fill="#526c69" opacity=".19"/><path d="M${x+w} ${y}l${dx} -${dy}v${h}l-${dx} ${dy}z" fill="${p[1]}"/><path d="M${x} ${y+h}h${w}l${dx} -${dy}h-${w}z" fill="#95aaa7"/>`;
+  for(let i=1;i<Math.floor(tall/5);i++){const t=i/Math.floor(tall/5);b+=`<path d="M${x+dx*t+2} ${y+h-dy*t}h${w-4}" stroke="${i%4===0?'#e9d4a0':'#62878f'}" stroke-width="2.2" stroke-dasharray="6 3"/><path d="M${x+w+dx*t} ${y-dy*t+4}v${h-8}" stroke="#8bafb0" stroke-width="1.5" stroke-dasharray="4 3"/>`;}
+  b+=`<rect x="${x+dx}" y="${y-dy}" width="${w}" height="${h}" rx="1.5" fill="${p[0]}" stroke="#eff0db" stroke-width="2"/><rect x="${x+dx+4}" y="${y-dy+4}" width="${w-8}" height="${h-8}" fill="${rand()>.5?'#9db4b2':'#b2bdb0'}" stroke="#b2c2b6"/>`;
+  if(w>32)b+=`<rect x="${x+dx+8}" y="${y-dy+8}" width="${w*.38}" height="${h*.24}" fill="#dae1d4" stroke="#8ea6a4"/><path d="M${x+dx+8} ${y-dy+8+h*.24}h${w*.38}" stroke="#708d91" stroke-width="3"/>`;
+  for(let j=0;j<(h>45?3:1);j++)b+=`<rect x="${x+dx+w-13}" y="${y-dy+8+j*13}" width="7" height="8" fill="#d5dacb" stroke="#809b9a" stroke-width=".8"/><path d="M${x+dx+w-12} ${y-dy+10+j*13}h5m-5 3h5" stroke="#96aaa2"/>`;
+  return b;
+ }
+ // Smaller streets define blocks; the two avenues alone do not define the map.
+ const cols=[[35,177],[205,345],[373,482],[547,680],[708,842],[870,970]],rows=[[36,167],[195,329],[450,575],[603,727]];
+ rows.forEach(([y0,y1],r)=>cols.forEach(([x0,x1],col)=>{
+  if((r<2&&col===0)||(r===3&&col<2))return;
+  const bw=x1-x0,bh=y1-y0,variant=(r*3+col)%4;
+  buildings+=`<rect x="${x0+4}" y="${y0+5}" width="${bw-8}" height="${bh-8}" rx="4" fill="#d9dfcb"/><path d="M${x0+8} ${y1-9}H${x1-8}" stroke="#bdcbbc" stroke-width="7"/>`;
+  for(let k=0;k<Math.floor(bw/17);k++)buildings+=`<path d="M${x0+12+k*17} ${y1-14}v9" stroke="#f3f1da" stroke-width="1.2"/>`;
+  if(variant===0){buildings+=building(x0+8,y0+27,bw*.45,bh*.58,29)+building(x0+bw*.62,y0+30,bw*.23,bh*.7,16);}
+  else if(variant===1){for(let k=0;k<3;k++)buildings+=building(x0+6+k*(bw-8)/3,y0+30,Math.max(19,(bw-22)/3),bh*.61,24+k*4);}
+  else if(variant===2){buildings+=building(x0+10,y0+34,bw*.64,bh*.42,42);buildings+=building(x0+10,y0+bh*.72,bw*.31,bh*.18,9)+building(x0+bw*.52,y0+bh*.73,bw*.31,bh*.18,12);}
+  else{for(let yy=y0+18;yy<y1-32;yy+=46)for(let xx=x0+8;xx<x1-27;xx+=38)buildings+=building(xx,yy,24+rand()*7,24+rand()*8,8+rand()*12);}
+ }));
+ for(let i=0;i<150;i++){let x,y;if(i<58){x=30+rand()*130;y=35+rand()*306;}else if(i<100){x=25+rand()*940;y=rand()>.5?349:431;}else{x=rand()>.5?530:496;y=20+rand()*710;}const r=5+rand()*5;trees+=`<ellipse cx="${x+4}" cy="${y+5}" rx="${r}" ry="${r*.6}" fill="#557569" opacity=".23"/><path d="M${x} ${y}v8" stroke="#7b8069" stroke-width="2"/><circle cx="${x}" cy="${y-4}" r="${r}" fill="${['#a6ba8e','#8ba986','#adc09a','#7e9f82'][i%4]}"/><circle cx="${x-2}" cy="${y-7}" r="${r*.66}" fill="#bbcca2" opacity=".65"/>`;}
+ const roads=[...Array.from({length:5},(_,i)=>`<path d="M${[190,359,694,856,985][i]},0V${i===0?683:840}"/>`),...Array.from({length:4},(_,i)=>`<path d="M0,${[181,343,589,741][i]}H1000"/>`)].join('');
+ const avenue='M-20 398H1020M516 -20V850';
+ const cars=Array.from({length:22},(_,i)=>{const x=i<12?25+i*82:507+(i%2)*18,y=i<12?380+(i%2)*32:20+(i-12)*74;return `<rect x="${x}" y="${y}" width="${i<12?15:7}" height="${i<12?7:15}" rx="2" fill="${['#e8e8d9','#789997','#e0c58c','#8a9da8'][i%4]}" stroke="#637e7f" stroke-width="1"/>`;}).join('');
+ return `<svg class="city-art" viewBox="0 0 1000 840" preserveAspectRatio="none" aria-label="네 권역의 가상 도시 지도"><defs><pattern id="paving" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 0H10V10" fill="none" stroke="#a8bdb2" stroke-width=".5" opacity=".22"/></pattern><linearGradient id="river" x2="1" y2="1"><stop stop-color="#72a4b0"/><stop offset="1" stop-color="#a0c2c0"/></linearGradient><clipPath id="city-land"><path d="M0 0H1000V815C800 870 640 814 520 788S180 660 0 660Z"/></clipPath></defs><rect width="1000" height="840" fill="#cbd7c6"/><rect width="1000" height="840" fill="url(#paving)"/><path d="M0 0H183V350H0z" fill="#b3c8a0"/><path d="M0 673C180 683 290 781 520 812S850 890 1000 833V880H0" fill="url(#river)"/><path d="M-20 646C170 650 296 752 530 784S842 856 1020 807" fill="none" stroke="#dfe3cf" stroke-width="24"/><path d="M-20 646C170 650 296 752 530 784S842 856 1020 807" fill="none" stroke="#9bb4ad" stroke-width="13"/><g clip-path="url(#city-land)"><g stroke="#e8e8d8" stroke-width="22">${roads}</g><g stroke="#99aeab" stroke-width="12">${roads}</g></g><path d="${avenue}" stroke="#e4e3cf" stroke-width="64" fill="none"/><path d="${avenue}" stroke="#829c9f" stroke-width="46" fill="none"/><path d="${avenue}" stroke="#d6c78e" stroke-width="2" fill="none"/><path d="M0 386H1000M0 410H1000M505 0V840M528 0V840" stroke="#d4dbca" stroke-width="1.5" stroke-dasharray="9 8" fill="none"/><g fill="#e6e8d8">${[474,551].map(x=>Array.from({length:7},(_,i)=>`<rect x="${x}" y="${368+i*9}" width="7" height="5"/>`).join('')).join('')}${[351,438].map(y=>Array.from({length:6},(_,i)=>`<rect x="${489+i*9}" y="${y}" width="5" height="7"/>`).join('')).join('')}</g><path d="M39 26C134 94 50 138 104 218S143 263 72 326" stroke="#dedfc4" stroke-width="10" fill="none"/><g clip-path="url(#city-land)">${buildings}${trees}</g>${cars}<g fill="none" stroke="#f6f4df" stroke-width="2" stroke-dasharray="8 6" opacity=".8"><path d="M516 0V840M0 398H1000"/></g><g font-family="sans-serif" font-size="13" fill="#506e6e" text-anchor="middle"><text x="95" y="241">시민공원</text><text x="784" y="220">중앙병원</text><text x="630" y="103">업무지구</text><text x="785" y="556">중앙시장</text><text x="202" y="794">하천 산책로</text><text x="280" y="419">중앙대로</text></g><rect width="1000" height="840" fill="#436c78" opacity=".07"/></svg>`;
+}

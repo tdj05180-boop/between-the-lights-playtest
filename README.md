@@ -21,3 +21,7 @@ Current full-story release: [integrated-20261012-fps](releases/integrated-202610
 
 ## 2026-10-12 Latest integrated train release
 Full story: [integrated-20261012-train-final](releases/integrated-20261012-train-final/street-study/play.html?v=train-final-20261012). Includes reviewed 2003 background, FPS, 2019 office/Seoul street, 23-second train scenery/cabin/passengers and 2026 integrated control. Five rounds / 5,000 points. Previous releases preserved.
+
+## 2026-10-12 Approved integrated release
+
+Current game: [integrated-20261012-approved-final](releases/integrated-20261012-approved-final/street-study/play.html). Includes approved 2003 scenery, warehouse office, office wiring, train, Seoul background buildings/signs/trees and era-specific front/rear passenger-car plates. Five rounds / 5,000 points. All previous release files and the fixed QR URL are preserved. This new release contains production dependencies and asset licenses only.

@@ -1,2 +1,3 @@
 # Preserve reviewed bytes and release-manifest hashes for this new release only.
 releases/integrated-20261012-train-final/** -text
+releases/integrated-20261012-approved-final/** -text
