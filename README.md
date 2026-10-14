@@ -30,3 +30,7 @@ Current game: [integrated-20261012-approved-final](releases/integrated-20261012-
 ## 2026-10-14 · integrated-20261014-windows-truck
 
 최신 누적 그래픽 개선, 2003년 창문 가로 봉 제거, 2003년·2019년 목적지 건물 실내 표현, 초록 트럭 접힌 문 보정이 반영된 릴리스입니다. 기존 릴리스와 고정 플레이 주소는 유지합니다.
+
+
+## integrated-20261014-seoul-static-optimization
+서울 거리 옆면 그림창을 기존 외벽으로 정리하고 동일 화질의 장면 계산 최적화를 적용했습니다. 유리 반사는 포함하지 않습니다. 2003년과 2026년은 이전 승인 상태입니다.
