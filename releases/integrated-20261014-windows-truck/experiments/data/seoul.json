@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "seoul",
+  "title": "서울 · 다시 시작하는 빛",
+  "sceneId": "life-city",
+  "appearanceId": "era-office",
+  "spawn": {
+    "x": -11,
+    "z": 8.7
+  },
+  "interactions": [
+    {
+      "id": "seoul-start",
+      "x": -10,
+      "z": 8.7,
+      "y": 1.2,
+      "radius": 1.8,
+      "label": "거리의 빛 모으기 시작",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "city-lights",
+      "type": "minigame",
+      "title": "빛을 모아 새로운 문 두드리기",
+      "description": "빛 3개를 모은 뒤 목적지의 문에서 행동하세요.",
+      "targets": [
+        "seoul-start"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-seoul-lights",
+      "config": {},
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "seoul",
+      "after": "done"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "서울 · 상징적 거리",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "차를 살피며 세 개의 빛을 모으고, 목적지의 문을 두드려 보세요.",
+          "durationMs": 3500
+        },
+        {
+          "text": "빛에 닿으면 획득합니다. 차량에 부딪히면 잠시 멈추고 점수가 줄어듭니다.",
+          "durationMs": 3500
+        }
+      ]
+    },
+    "done": {
+      "speaker": "이어지는 시간",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "세 번 두드린 문 너머, 이야기는 2026년으로 이어집니다.",
+          "durationMs": 3500
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}

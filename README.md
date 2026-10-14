@@ -25,3 +25,8 @@ Full story: [integrated-20261012-train-final](releases/integrated-20261012-train
 ## 2026-10-12 Approved integrated release
 
 Current game: [integrated-20261012-approved-final](releases/integrated-20261012-approved-final/street-study/play.html). Includes approved 2003 scenery, warehouse office, office wiring, train, Seoul background buildings/signs/trees and era-specific front/rear passenger-car plates. Five rounds / 5,000 points. All previous release files and the fixed QR URL are preserved. This new release contains production dependencies and asset licenses only.
+
+
+## 2026-10-14 · integrated-20261014-windows-truck
+
+최신 누적 그래픽 개선, 2003년 창문 가로 봉 제거, 2003년·2019년 목적지 건물 실내 표현, 초록 트럭 접힌 문 보정이 반영된 릴리스입니다. 기존 릴리스와 고정 플레이 주소는 유지합니다.
