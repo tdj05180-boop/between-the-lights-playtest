@@ -1,11 +1,11 @@
 {
-  "version": "integrated-20261031-night-interiors",
-  "release": "releases/integrated-20261031-night-interiors/",
-  "entry": "releases/integrated-20261031-night-interiors/street-study/play.html?v=integrated-20261031-night-interiors",
-  "manifest": "releases/integrated-20261031-night-interiors/release-manifest.json",
-  "previousRelease": "releases/integrated-20261030-laser1m/",
+  "version": "integrated-20261101-performance1",
+  "release": "releases/integrated-20261101-performance1/",
+  "entry": "releases/integrated-20261101-performance1/street-study/play.html?v=integrated-20261101-performance1",
+  "manifest": "releases/integrated-20261101-performance1/release-manifest.json",
+  "previousRelease": "releases/integrated-20261031-ui-finish/",
   "scoreVersion": "agency-v3-5000",
   "rounds": 5,
   "maxScore": 5000,
-  "files": 284
+  "files": 295
 }
