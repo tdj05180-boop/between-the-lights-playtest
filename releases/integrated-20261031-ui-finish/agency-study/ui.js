@@ -1,0 +1,11 @@
+import {panel} from '../experiments/ui.js';
+export const names=['북서 생활권','북동 업무권','남서 주거권','남동 상업권'];
+export const bike='<svg viewBox="0 0 40 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="22" r="5"/><circle cx="31" cy="22" r="5"/><path d="M9 22l7-11h8l7 11H16l-5-5m12-6 3-7h5M15 10H9"/></g><rect x="3" y="4" width="10" height="9" rx="2" fill="currentColor"/></svg>';
+export const food='<svg viewBox="0 0 40 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 14h30c-1 9-5 12-15 12S6 23 5 14zm8-5c-4-3 4-3 0-6m8 6c-4-3 4-3 0-6m8 6c-4-3 4-3 0-6M12 28h16"/></g></svg>';
+export function dashboard(ctx,id,title,instruction){
+ const ui=panel(ctx,id,title,instruction);ui.el.classList.add('agency-dashboard');ui.el.querySelector('small').textContent='BRANCH OPERATIONS · 600+ RIDERS';
+ const map=document.createElement('div');map.className='agency-map';
+ map.innerHTML=`<svg class="city-base" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="100" rx="3" fill="#dce7df"/><g fill="#c0d1c8" stroke="#f2f5ec" stroke-width="1">${[6,29,58,81].flatMap(x=>[7,31,59,82].map(y=>`<rect x="${x}" y="${y}" width="14" height="12" rx="1"/>`)).join('')}</g><g stroke="#f9f5e7" stroke-width="9"><path d="M0 50H100M50 0V100"/></g><g stroke="#a2b4ab" stroke-width=".35" stroke-dasharray="2 2"><path d="M0 50H100M50 0V100"/></g><g fill="#d0dfc5"><circle cx="25" cy="24" r="4"/><circle cx="74" cy="76" r="4"/></g></svg><svg class="agency-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>`;
+ ui.content.append(map);const feedback=document.createElement('div');feedback.className='agency-feedback';feedback.setAttribute('role','status');feedback.textContent='업무 현황을 확인하세요.';ui.content.append(feedback);
+ return {...ui,map,feedback,link(a,b){const line=document.createElementNS('http://www.w3.org/2000/svg','line');for(const [key,val] of Object.entries({x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:'#d0a34c','stroke-width':1.3}))line.setAttribute(key,val);map.querySelector('.agency-links').append(line);ctx.after(1000,()=>line.remove());}};
+}

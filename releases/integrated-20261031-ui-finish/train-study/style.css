@@ -1,0 +1,8 @@
+body.train-cutscene #hud,body.train-cutscene #touchControls,body.train-cutscene #worldLabels,body.train-cutscene #controls,body.train-cutscene #sceneCaption{display:none!important}
+body.train-cutscene .topbar .wordmark,body.train-cutscene .topbar .edition{visibility:hidden}
+body.train-cutscene #dialogue{left:50%;right:auto;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(650px,calc(100vw - 50px));text-align:center;padding:14px 22px;background:rgba(30,46,45,.76);color:#fff9e8;border:1px solid #e9eed34d;box-shadow:none}
+body.train-cutscene #dialogText{font-size:clamp(15px,2.1vw,22px);margin:7px 0;line-height:1.5}body.train-cutscene .narrator{justify-content:center;color:#e1e7cf;font-size:10px;letter-spacing:1px}body.train-cutscene #dialogRemaining,body.train-cutscene #dialogCount{display:none}
+.train-transition{position:fixed;inset:0;z-index:29;background:#dfe6dd;pointer-events:none;opacity:0}
+@media(max-height:500px){body.train-cutscene #dialogue{width:calc(100vw - 270px);bottom:max(14px,env(safe-area-inset-bottom));padding:8px 14px}body.train-cutscene #dialogText{margin:4px 0;font-size:15px}}
+
+.train-transition.leaving{animation:trainReveal .45s ease-out forwards}@keyframes trainReveal{from{opacity:1}to{opacity:0}}
