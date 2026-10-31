@@ -1,0 +1,5 @@
+@import '../src/systems/interaction-prompt.css';
+.conveyor-status header p{display:none}.conveyor-status h2{font-size:14px;margin:0}.conveyor-status{pointer-events:none}
+@media(max-height:500px){.conveyor-status{padding:7px 10px}.conveyor-status h2{display:none}}
+@media(max-width:600px){.conveyor-status{width:50vw;bottom:135px}}
+#warehouseAudioSettings{border:1px solid #bdcdc0;border-radius:14px;padding:10px 14px;margin:12px 0;color:#35584b}#warehouseAudioSettings label{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:14px}#warehouseAudioSettings input[type=range]{flex:1;min-width:80px;accent-color:#537d68}#warehouseAudioSettings output{min-width:38px;text-align:right}.help-inner{max-height:85dvh;overflow-y:auto}
