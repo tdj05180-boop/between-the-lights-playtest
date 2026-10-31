@@ -1,0 +1,7 @@
+2019 office audio supplied by user in office-audio. Original filenames, extensions and bytes preserved.
+BGM: ovrsoull-deep-bass-cinematic-tension-forensic-noir-investigative-pulse-454724.mp3
+Hit: mixkit-small-electric-glitch-2595.wav
+Paper: mixkit-paper-slide-1530.wav
+Unlock: mixkit-unlock-game-notification-253.wav
+Door: mixkit-creaky-door-open-195.wav
+No new audio downloaded or synthesized. Source license documents were not included in the supplied folder.

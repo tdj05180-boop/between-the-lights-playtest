@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "2026",
+  "title": "2026 · 함께 움직이는 하루",
+  "sceneId": "life-agency",
+  "appearanceId": "era-agency",
+  "spawn": {
+    "x": -4,
+    "z": -0.8
+  },
+  "interactions": [
+    {
+      "id": "computer",
+      "x": -5.1,
+      "z": -4.3,
+      "y": 1.05,
+      "radius": 0.55,
+      "label": "앉아서 업무 시작",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "agency",
+      "type": "minigame",
+      "title": "오늘의 배차와 권역 운영",
+      "description": "의자에 앉아 배차와 권역 운영 업무를 시작하세요.",
+      "targets": [
+        "computer"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-agency-control",
+      "config": {},
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "agency",
+      "after": "done"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "2026 · 함께 움직이는 하루",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "어느덧, 600명이 넘는 라이더와 함께하는 지사를 맡게 됐다.",
+          "durationMs": 2500
+        },
+        {
+          "text": "이제는 나의 하루뿐 아니라, 함께하는 사람들의 하루도 살피고 있다.",
+          "durationMs": 2500
+        }
+      ]
+    },
+    "dispatch-done": {
+      "speaker": "다음 업무",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "이제 네 권역의 부담을 살펴보고 인력을 재배치해 보세요.",
+          "durationMs": 4000
+        }
+      ]
+    },
+    "done": {
+      "speaker": "여기까지 이어 온 길",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "한때는 내 가게의 셔터를 지키기 위해 버텼다.",
+          "durationMs": 2500
+        },
+        {
+          "text": "지금은 함께하는 사람들의 하루가 무사히 이어지길 바란다.",
+          "durationMs": 2500
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}
