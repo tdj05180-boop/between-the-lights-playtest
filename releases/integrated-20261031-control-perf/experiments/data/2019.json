@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "2019",
+  "title": "2019 · 밀려온 파도",
+  "sceneId": "life-office",
+  "appearanceId": "era-office",
+  "spawn": {
+    "x": 0,
+    "z": 4.4
+  },
+  "interactions": [
+    {
+      "id": "documents",
+      "x": 0,
+      "z": 3.4,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "서류 챙기기",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "documents",
+      "type": "minigame",
+      "title": "필요한 서류 챙기기",
+      "description": "빛나는 표시 가까이에서 행동으로 시작하세요.",
+      "targets": [
+        "documents"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-documents",
+      "config": {
+        "hitCooldownMs": 1000,
+        "stunMs": 480
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "office",
+      "after": "done"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "2019 · 밀려온 파도",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "2019년, 온라인 사업을 이어 가던 어느 날.",
+          "durationMs": 2500
+        },
+        {
+          "text": "세무조사라는 낯선 파도가 밀려왔다.",
+          "durationMs": 2500
+        }
+      ]
+    },
+    "done": {
+      "speaker": "서울로 향하는 길",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "필요한 서류를 모두 챙겼다.",
+          "durationMs": 2500
+        },
+        {
+          "text": "이제 서울로 향할 시간이었다.",
+          "durationMs": 2500
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}
