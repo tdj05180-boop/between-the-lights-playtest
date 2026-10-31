@@ -1,0 +1,5 @@
+import {createCandidateAvatar} from '../src/models/candidate-avatar.js';
+export function eraAppearance({shirt,hair,trim,age=0}){return {create(){const a=createCandidateAvatar();a.object.traverse(n=>{if(!n.isSkinnedMesh)return;const mats=n.material;mats[0].color.setHex(shirt);mats[1].color.setHex(trim);mats[4].color.setHex(hair);if(age)mats[3].color.offsetHSL(0,-age*.035,-age*.007);});
+ // Only the existing hair cap and mouth patch; pelvis, clothes seams and rig stay intact.
+ const g=a.geometry,p=g.attributes.position,visited=new Set();for(const group of g.groups){if(![4,9].includes(group.materialIndex))continue;for(let j=group.start;j<group.start+group.count;j++){const i=g.index.getX(j);if(visited.has(i))continue;visited.add(i);if(group.materialIndex===4){const t=Math.max(0,(p.getY(i)-1.65)/.18);p.setY(i,p.getY(i)-age*.012*t);p.setX(i,p.getX(i)+age*.007*t);}else p.setY(i,p.getY(i)+age*.0015*Math.min(1,Math.abs(p.getX(i))/.05));}}
+ p.needsUpdate=true;g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();return {...a,snapshot(){return {...a.snapshot(),eraTest:true,ageTint:age};}};}};}
