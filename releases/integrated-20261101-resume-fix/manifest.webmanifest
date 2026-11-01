@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "다시, 불을 켜다",
+  "short_name": "다시, 불을 켜다",
+  "lang": "ko",
+  "description": "다시, 불을 켜다 — 3D 스토리 게임 플레이테스트",
+  "start_url": "./?source=homescreen",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#e5e8de",
+  "theme_color": "#e7e9df",
+  "icons": [
+    {"src":"./pwa/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./pwa/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"}
+  ]
+}

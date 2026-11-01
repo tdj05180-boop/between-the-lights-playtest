@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "2003",
+  "title": "2003 · 닫히는 셔터",
+  "sceneId": "life-street",
+  "appearanceId": "default",
+  "spawn": {
+    "x": -1.4,
+    "z": 2
+  },
+  "interactions": [
+    {
+      "id": "shopkeeper",
+      "x": -2.05,
+      "z": 0.9,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "가게 직원",
+      "kind": "npc"
+    },
+    {
+      "id": "shutter",
+      "x": 0,
+      "z": -0.1,
+      "y": 1.5,
+      "radius": 1.6,
+      "label": "셔터 앞에서",
+      "kind": "object"
+    }
+  ],
+  "quests": [
+    {
+      "id": "greeting",
+      "type": "interact",
+      "title": "가게 직원과 이야기하기",
+      "description": "표시에 다가가 행동하세요.",
+      "targets": [
+        "shopkeeper"
+      ],
+      "goal": {
+        "event": "interact",
+        "count": 1
+      },
+      "before": "greeting"
+    },
+    {
+      "id": "shutter",
+      "type": "minigame",
+      "title": "닫히는 셔터",
+      "description": "가게 앞으로 가서 셔터를 올리세요.",
+      "targets": [
+        "shutter"
+      ],
+      "goal": {
+        "event": "minigame:success",
+        "count": 1
+      },
+      "minigameId": "life-shutter",
+      "config": {
+        "tapGain": 0.09,
+        "baseFall": 0.12,
+        "rampFall": 0.52,
+        "maxMs": 10000,
+        "graceMs": 1000,
+        "fallPower": 1.5
+      },
+      "failure": {
+        "retry": "manual"
+      },
+      "scoreRound": "shutter",
+      "after": "closed"
+    }
+  ],
+  "sequences": {
+    "opening": {
+      "speaker": "2003 · 결혼, 그리고 힘겨운 시작",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "2003년. 결혼을 하고, 새로운 삶을 시작했다.",
+          "durationMs": 2500
+        },
+        {
+          "text": "하지만 사업은 마음처럼 풀리지 않았다.",
+          "durationMs": 2500
+        },
+        {
+          "text": "그 시절은 길고 어두웠다.",
+          "durationMs": 2500
+        }
+      ]
+    },
+    "greeting": {
+      "speaker": "가게 직원",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "“사장님, 조금만 더 버텨 봅시다.”",
+          "durationMs": 2000
+        },
+        {
+          "text": "“그래, 힘내 보자.”",
+          "durationMs": 3100,
+          "speaker": "나"
+        }
+      ]
+    },
+    "closed": {
+      "speaker": "다음 시간으로",
+      "lockMovement": true,
+      "lines": [
+        {
+          "text": "셔터는 끝내 내려왔다.",
+          "durationMs": 2400
+        },
+        {
+          "text": "하지만 이야기는 여기서 끝나지 않았다.",
+          "durationMs": 2200
+        }
+      ]
+    }
+  },
+  "opening": "opening"
+}
