@@ -1,0 +1,6 @@
+User-provided files from workspace seoul-audio. Original names/extensions preserved.
+BGM: soulprodmusic-night-city-143869.mp3 — Night City / SoulProdMusic (user attribution).
+SFX: eight supplied Mixkit WAV files, unchanged.
+No new online download. License certificates were not present in supplied folder; attribution is not proof of a license grant.
+Passing car: 2-second playback excerpt starting at 4s, at most one voice / 1.5s cooldown.
+Environment stream loops at low SFX gain. Other one-shots retain original duration; per-name replacement and global voice cap apply.

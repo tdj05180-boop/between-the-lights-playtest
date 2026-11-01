@@ -1,15 +1,14 @@
 {
-  "version": "integrated-20261101-train-handoff",
-  "release": "releases/integrated-20261101-train-handoff/",
-  "entry": "releases/integrated-20261101-train-handoff/street-study/play.html?v=integrated-20261101-train-handoff",
-  "manifest": "releases/integrated-20261101-train-handoff/release-manifest.json",
-  "previousRelease": "releases/integrated-20261101-result-rotation/",
+  "version": "integrated-20261101-door-arrow",
+  "release": "releases/integrated-20261101-door-arrow/",
+  "entry": "releases/integrated-20261101-door-arrow/street-study/play.html?v=integrated-20261101-door-arrow",
+  "manifest": "releases/integrated-20261101-door-arrow/release-manifest.json",
+  "previousRelease": "releases/integrated-20261101-train-handoff/",
   "scoreVersion": "agency-v3-5000",
   "rounds": 5,
   "maxScore": 5000,
   "files": 305,
   "changed": [
-    "src/runtime.js",
-    "train-study/space.js"
+    "seoul-study/space.js"
   ]
 }
