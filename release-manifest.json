@@ -1,15 +1,24 @@
 {
-  "version": "integrated-20261101-resume-fix",
-  "release": "releases/integrated-20261101-resume-fix/",
-  "entry": "releases/integrated-20261101-resume-fix/street-study/play.html?v=integrated-20261101-resume-fix",
-  "manifest": "releases/integrated-20261101-resume-fix/release-manifest.json",
-  "previousRelease": "releases/integrated-20261101-landscape/",
+  "version": "integrated-20261101-citizens-1k",
+  "release": "releases/integrated-20261101-citizens-1k/",
+  "entry": "releases/integrated-20261101-citizens-1k/street-study/play.html?v=integrated-20261101-citizens-1k",
+  "manifest": "releases/integrated-20261101-citizens-1k/release-manifest.json",
+  "previousRelease": "releases/integrated-20261101-resume-fix/",
   "scoreVersion": "agency-v3-5000",
   "rounds": 5,
   "maxScore": 5000,
-  "files": 297,
+  "files": 305,
   "changed": [
-    "src/runtime.js",
-    "src/systems/landscape.js"
+    "src/characters/asset-variant.js",
+    "src/characters/assets/distantMan-agency-1k.glb",
+    "src/characters/assets/distantWoman-agency-1k.glb",
+    "src/characters/assets/elder-agency-1k.glb",
+    "src/characters/assets/grandmother-agency-1k.glb",
+    "src/characters/assets/man-agency-1k.glb",
+    "src/characters/assets/model-bounds.json",
+    "src/characters/assets/professor-agency-1k.glb",
+    "src/characters/assets/woman-agency-1k.glb",
+    "src/characters/library.js",
+    "src/characters/next-scene-assets.js"
   ]
 }

@@ -1,0 +1,3 @@
+This release includes only the project procedural improved game and Three.js r180 (MIT). See vendor/THREE-LICENSE.txt. No Quaternius, Kenney, or Synty model/texture files are included. Original base generator modules are runtime dependencies of the improved scene, not selectable comparison scenes.
+
+License-plate glyph outlines are derived from Noto Sans KR Bold, Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Licensed under the SIL Open Font License 1.1. The full license is embedded in models/license-plate-glyphs.js. Source: https://github.com/google/fonts/tree/main/ofl/notosanskr

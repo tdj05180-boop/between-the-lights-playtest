@@ -1,0 +1,57 @@
+User-provided audio from the workspace 2026_Branch_Audio folder.
+No new audio was searched for or generated. Original names and extensions preserved.
+
+BGM: cozyvibes-ambient-chill-technology-503847.mp3
+Selection: virtual_vibes-single-mouse-click-sound-hd-379373.mp3
+Initial order batch: universfield-soft-notification-146623.mp3
+Dispatch success: universfield-success-notification-132473.mp3
+Invalid action: universfield-error-notification-352286.mp3
+Dispatch to regional operations: universfield-swoosh-05-329226.mp3
+Combined task completion: soundshelfstudio-mission-complete-chime-534595.mp3
+
+Chair: freesound_community-office-chair-rolling-69797.mp3
+Typing: virtual_vibes-realistic-typing-sound-for-office-use-379369.mp3
+
+Official source/license review: 2026-10-12
+All nine works are marked free for use under the Pixabay Content License.
+https://pixabay.com/service/license-summary/
+https://pixabay.com/service/terms/ (section 5)
+Incorporated into an original interactive game with synchronized events and mixing;
+not distributed as a standalone sound collection. Do not relicense as game-owned or CC0.
+
+Ambient Chill Technology — CozyVibes
+https://pixabay.com/music/ambient-ambient-chill-technology-503847/
+Content ID Registered: licensed game use is allowed; gameplay video uploads may
+receive automated claims. No separate download certificate was supplied.
+
+Office Chair Rolling — bokal (Freesound), via freesound_community
+https://pixabay.com/sound-effects/household-office-chair-rolling-69797/
+Short excerpts for chair pull, push, return. Original file preserved.
+
+Realistic Typing Sound for Office Use — Virtual_Vibes
+https://pixabay.com/sound-effects/film-special-effects-realistic-typing-sound-for-office-use-379369/
+Work start 1.2s; intermittent staff 0.85s, low volume.
+
+Single Mouse Click Sound HD — Virtual_Vibes
+https://pixabay.com/sound-effects/film-special-effects-single-mouse-click-sound-hd-379373/
+
+Soft Notification — Universfield
+https://pixabay.com/sound-effects/film-special-effects-soft-notification-146623/
+
+Success Notification — Universfield
+https://pixabay.com/sound-effects/film-special-effects-success-notification-132473/
+
+Error Notification — Universfield
+https://pixabay.com/sound-effects/film-special-effects-error-notification-352286/
+
+Swoosh 05 — Universfield
+https://pixabay.com/sound-effects/film-special-effects-swoosh-05-329226/
+
+Mission Complete Chime — SoundShelfStudio
+https://pixabay.com/sound-effects/film-special-effects-mission-complete-chime-534595/
+
+Public original listings and terms checked; no prohibition found for this game use.
+Attribution is not required by the license; creators are credited here voluntarily.
+
+Chair excerpt starts at 5.4s (original lead-in is near-silent). Gain 1.2 before
+shared SFX gain; short attack/release, at most one chair voice.
