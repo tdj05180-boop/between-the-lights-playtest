@@ -1,0 +1,2 @@
+import {bicycleModel} from './bicycle-model.js';import {cyclist} from './cyclist.js';
+export function bicycleWithRider(gltf){const bike=bicycleModel({riderVisible:false}),rider=cyclist(gltf);bike.root.add(rider.object);return {root:bike.root,rider,update(distance){bike.update(distance);rider.update(distance/.34*.47);},dispose(){rider.dispose();bike.root.traverse(n=>{if(n.isMesh){n.geometry.dispose();if(Array.isArray(n.material))n.material.forEach(m=>m.dispose());else n.material.dispose();}});}};}

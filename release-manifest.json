@@ -1,11 +1,17 @@
 {
-  "version": "integrated-20261101-performance1",
-  "release": "releases/integrated-20261101-performance1/",
-  "entry": "releases/integrated-20261101-performance1/street-study/play.html?v=integrated-20261101-performance1",
-  "manifest": "releases/integrated-20261101-performance1/release-manifest.json",
-  "previousRelease": "releases/integrated-20261031-ui-finish/",
+  "version": "integrated-20261101-landscape",
+  "release": "releases/integrated-20261101-landscape/",
+  "entry": "releases/integrated-20261101-landscape/street-study/play.html?v=integrated-20261101-landscape",
+  "manifest": "releases/integrated-20261101-landscape/release-manifest.json",
+  "previousRelease": "releases/integrated-20261101-performance1/",
   "scoreVersion": "agency-v3-5000",
   "rounds": 5,
   "maxScore": 5000,
-  "files": 295
+  "files": 297,
+  "changed": [
+    "src/mobile-controls.css",
+    "src/runtime.js",
+    "src/systems/landscape.css",
+    "src/systems/landscape.js"
+  ]
 }
